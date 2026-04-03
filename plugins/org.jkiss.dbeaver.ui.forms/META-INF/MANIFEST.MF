@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase UI Forms Toolkit
+Bundle-SymbolicName: org.jkiss.sqbase.ui.forms;singleton:=true
+Bundle-Version: 1.0.5.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Import-Package: org.jkiss.code
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.databinding,
+ org.eclipse.core.databinding.observable,
+ org.eclipse.core.databinding.property,
+ org.eclipse.jface.databinding,
+ org.jkiss.sqbase.ui
+Export-Package: org.jkiss.sqbase.ui.forms
+Automatic-Module-Name: org.jkiss.sqbase.ui.forms

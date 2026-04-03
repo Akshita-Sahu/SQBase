@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+        id="org.jkiss.sqbase.appstore.feature"
+        label="SQBase AppStore"
+        version="26.0.3.qualifier"
+        provider-name="SQBase Corp"
+        plugin="org.jkiss.sqbase.ui.app.standalone">
+
+    <description>SQBase Universal Database Manager standalone application</description>
+
+    <copyright>SQBase Corp and others</copyright>
+    <license url="https://sqbase.io/product/sqbase_license.txt"/>
+
+    <includes id="org.jkiss.sqbase.app.base.feature" version="0.0.0"/>
+    <includes id="org.jkiss.sqbase.app.local.feature" version="0.0.0"/>
+
+    <!-- Additional plugins for standalone version -->
+
+    <plugin id="org.jkiss.sqbase.ui.app.standalone" version="0.0.0"/>
+    <plugin id="org.jkiss.sqbase.ui.config.sample" version="0.0.0" />
+
+    <includes id="org.jkiss.sqbase.ui.extra.feature" version="0.0.0"/>
+    <plugin id="org.jkiss.sqbase.ui.app.winstore" os="win32" arch="x86_64" version="0.0.0" />
+
+</feature>

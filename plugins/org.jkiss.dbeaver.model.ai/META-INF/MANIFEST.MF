@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Activator: org.jkiss.sqbase.model.ai.internal.AIActivator
+Bundle-Name: SQBase AI Model
+Bundle-SymbolicName: org.jkiss.sqbase.model.ai;singleton:=true
+Bundle-Version: 2.0.20.qualifier
+Export-Package: org.jkiss.sqbase.model.ai,
+ org.jkiss.sqbase.model.ai.commands,
+ org.jkiss.sqbase.model.ai.engine,
+ org.jkiss.sqbase.model.ai.engine.copilot,
+ org.jkiss.sqbase.model.ai.engine.copilot.dto,
+ org.jkiss.sqbase.model.ai.engine.openai,
+ org.jkiss.sqbase.model.ai.engine.openai.dto,
+ org.jkiss.sqbase.model.ai.impl,
+ org.jkiss.sqbase.model.ai.internal,
+ org.jkiss.sqbase.model.ai.prompt,
+ org.jkiss.sqbase.model.ai.registry,
+ org.jkiss.sqbase.model.ai.utils
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Automatic-Module-Name: org.jkiss.sqbase.model.ai
+Require-Bundle: org.jkiss.sqbase.model;visibility:=reexport,
+ org.jkiss.sqbase.model.jdbc,
+ org.jkiss.sqbase.model.sql,
+ org.jkiss.sqbase.registry,
+ com.google.gson
+
+

@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase GIS Support
+Bundle-SymbolicName: org.jkiss.sqbase.data.gis;singleton:=true
+Bundle-Version: 1.0.201.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.jkiss.sqbase.model;visibility:=reexport,
+ org.jkiss.sqbase.model.jdbc;visibility:=reexport,
+ org.jkiss.bundle.gis;visibility:=reexport
+Export-Package: org.jkiss.sqbase.data.gis.handlers,
+ org.jkiss.sqbase.model.gis
+Automatic-Module-Name: org.jkiss.sqbase.data.gis

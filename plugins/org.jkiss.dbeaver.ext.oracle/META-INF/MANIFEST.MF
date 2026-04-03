@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase Oracle Model
+Bundle-SymbolicName: org.jkiss.sqbase.ext.oracle;singleton:=true
+Bundle-Version: 2.1.262.qualifier
+Bundle-Release-Date: 20260420
+Bundle-Activator: org.jkiss.sqbase.ext.oracle.internal.OracleActivator
+Require-Bundle: com.github.jsqlparser,
+ com.google.gson,
+ org.jkiss.sqbase.data.gis,
+ org.jkiss.sqbase.model;visibility:=reexport,
+ org.jkiss.sqbase.model.jdbc;visibility:=reexport,
+ org.jkiss.sqbase.model.sql,
+ org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.tasks.native;visibility:=reexport
+Export-Package: org.jkiss.sqbase.ext.oracle,
+ org.jkiss.sqbase.ext.oracle.data,
+ org.jkiss.sqbase.ext.oracle.edit,
+ org.jkiss.sqbase.ext.oracle.model,
+ org.jkiss.sqbase.ext.oracle.model.auth,
+ org.jkiss.sqbase.ext.oracle.model.dict,
+ org.jkiss.sqbase.ext.oracle.model.lock,
+ org.jkiss.sqbase.ext.oracle.model.plan,
+ org.jkiss.sqbase.ext.oracle.model.session,
+ org.jkiss.sqbase.ext.oracle.model.source,
+ org.jkiss.sqbase.ext.oracle.oci,
+ org.jkiss.sqbase.ext.oracle.sql,
+ org.jkiss.sqbase.ext.oracle.tasks
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Import-Package: com.google.gson
+Automatic-Module-Name: org.jkiss.sqbase.ext.oracle

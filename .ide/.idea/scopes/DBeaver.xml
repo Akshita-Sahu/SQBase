@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="SQBase" pattern="file[org*]:*//*||file[sqbase]:*/*.java" />
+</component>

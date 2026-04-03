@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase Snowflake Model
+Bundle-SymbolicName: org.jkiss.sqbase.ext.snowflake;singleton:=true
+Bundle-Version: 1.0.197.qualifier
+Bundle-Release-Date: 20260420
+Bundle-Vendor: SQBase Corp
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.jkiss.sqbase.ext.snowflake.internal.SnowflakeActivator
+Require-Bundle: org.jkiss.sqbase.model;visibility:=reexport,
+ org.jkiss.sqbase.model.sql;visibility:=reexport,
+ org.jkiss.sqbase.ext.generic;visibility:=reexport
+Export-Package: org.jkiss.sqbase.ext.snowflake,
+ org.jkiss.sqbase.ext.snowflake.model,
+ org.jkiss.sqbase.ext.snowflake.model.auth
+Bundle-Localization: OSGI-INF/l10n/bundle
+Automatic-Module-Name: org.jkiss.sqbase.ext.snowflake

@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase Eclipse IDE
+Bundle-SymbolicName: org.jkiss.sqbase.ui.app.eclipse;singleton:=true
+Bundle-Version: 26.0.3.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Require-Bundle: org.eclipse.ui,
+ org.jkiss.sqbase.core,
+ org.jkiss.sqbase.ui,
+ org.jkiss.sqbase.ui.editors.data,
+ org.jkiss.sqbase.ui.editors.sql
+Automatic-Module-Name: org.jkiss.sqbase.ui.app.eclipse

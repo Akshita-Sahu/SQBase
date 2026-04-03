@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase SQL Server UI
+Bundle-SymbolicName: org.jkiss.sqbase.ext.mssql.ui;singleton:=true
+Bundle-Version: 1.0.176.qualifier
+Bundle-Release-Date: 20260420
+Bundle-Activator: org.jkiss.sqbase.ext.mssql.ui.SQLServerUIActivator
+Require-Bundle: org.jkiss.sqbase.model.sql,
+ org.jkiss.sqbase.ui,
+ org.jkiss.sqbase.ext.generic,
+ org.jkiss.sqbase.ext.mssql,
+ org.jkiss.sqbase.tasks.ui,
+ org.jkiss.sqbase.ui.editors.base,
+ org.jkiss.sqbase.ui.editors.connection,
+ org.jkiss.sqbase.ui.editors.entity,
+ org.jkiss.sqbase.ui.editors.sql,
+ org.jkiss.sqbase.ui.editors.session
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Bundle-Localization: OSGI-INF/l10n/bundle
+Automatic-Module-Name: org.jkiss.sqbase.ext.mssql.ui
+Import-Package: org.jkiss.sqbase.ui.navigator
+Export-Package: org.jkiss.sqbase.ext.mssql.ui.editors

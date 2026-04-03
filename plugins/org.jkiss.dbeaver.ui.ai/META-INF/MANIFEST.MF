@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase AI UI
+Bundle-SymbolicName: org.jkiss.sqbase.ui.ai;singleton:=true
+Bundle-Version: 1.0.79.qualifier
+Import-Package: org.jkiss.sqbase.model.ai,
+ org.jkiss.sqbase.model.ai.internal
+Export-Package: org.jkiss.sqbase.ui.ai,
+ org.jkiss.sqbase.ui.ai.controls,
+ org.jkiss.sqbase.ui.ai.engine.openai,
+ org.jkiss.sqbase.ui.ai.engine.copilot,
+ org.jkiss.sqbase.ui.ai.format,
+ org.jkiss.sqbase.ui.ai.preferences,
+ org.jkiss.sqbase.ui.ai.internal,
+ org.jkiss.sqbase.ui.ai.model
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.jkiss.sqbase.model.ai,
+ org.jkiss.sqbase.ui.navigator,
+ org.eclipse.ui.workbench,
+ org.jkiss.sqbase.core,
+ org.jkiss.sqbase.ui,
+ org.eclipse.ui.forms,
+ org.jkiss.sqbase.model.ai,
+ org.jkiss.sqbase.ui.editors.sql,
+ org.jkiss.sqbase.ui.editors.base,
+ org.jkiss.sqbase.ui.editors.connection
+Bundle-Activator: org.jkiss.sqbase.ui.ai.internal.AIUIActivator
+Automatic-Module-Name: org.jkiss.sqbase.ui.ai
+

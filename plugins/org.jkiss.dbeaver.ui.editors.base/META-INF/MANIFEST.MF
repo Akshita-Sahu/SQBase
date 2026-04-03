@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase UI Editors - Base
+Bundle-SymbolicName: org.jkiss.sqbase.ui.editors.base;singleton:=true
+Bundle-Version: 1.0.177.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.core.resources;visibility:=reexport,
+ org.eclipse.core.filesystem;visibility:=reexport,
+ org.eclipse.help,
+ org.eclipse.ui.ide;visibility:=reexport,
+ org.eclipse.ui.workbench.texteditor;visibility:=reexport,
+ org.eclipse.e4.ui.css.swt.theme,
+ org.jkiss.sqbase.model;visibility:=reexport,
+ org.jkiss.sqbase.model.rcp,
+ org.jkiss.sqbase.ui;visibility:=reexport
+Export-Package: org.jkiss.sqbase.ui,
+ org.jkiss.sqbase.ui.actions,
+ org.jkiss.sqbase.ui.controls,
+ org.jkiss.sqbase.ui.editors,
+ org.jkiss.sqbase.ui.editors.file,
+ org.jkiss.sqbase.ui.editors.text,
+ org.jkiss.sqbase.ui.editors.text.handlers
+Automatic-Module-Name: org.jkiss.sqbase.ui.editors.base

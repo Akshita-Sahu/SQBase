@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase Apache HIVE Model
+Bundle-SymbolicName: org.jkiss.sqbase.ext.hive;singleton:=true
+Bundle-Version: 1.0.183.qualifier
+Bundle-Release-Date: 20260420
+Require-Bundle: org.jkiss.sqbase.model,
+ org.jkiss.sqbase.model.sql,
+ org.jkiss.sqbase.ext.generic
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Automatic-Module-Name: org.jkiss.sqbase.ext.hive
+Export-Package: org.jkiss.sqbase.ext.hive.model

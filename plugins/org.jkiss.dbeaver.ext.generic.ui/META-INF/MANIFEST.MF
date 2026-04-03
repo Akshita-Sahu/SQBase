@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase Generic UI Plug-in
+Bundle-SymbolicName: org.jkiss.sqbase.ext.generic.ui;singleton:=true
+Bundle-Version: 1.0.153.qualifier
+Bundle-Release-Date: 20260420
+Require-Bundle: org.jkiss.sqbase.ext.generic;visibility:=reexport,
+ org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.model.sql,
+ org.jkiss.sqbase.ui;visibility:=reexport,
+ org.jkiss.sqbase.data.transfer;visibility:=reexport,
+ org.jkiss.sqbase.ui.editors.base;visibility:=reexport,
+ org.jkiss.sqbase.ui.editors.data;visibility:=reexport,
+ org.jkiss.sqbase.ui.editors.entity;visibility:=reexport,
+ org.jkiss.sqbase.ui.editors.sql;visibility:=reexport,
+ org.jkiss.sqbase.ui.navigator;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Bundle-Localization: OSGI-INF/l10n/bundle
+Export-Package: org.jkiss.sqbase.ext.generic.views
+Automatic-Module-Name: org.jkiss.sqbase.ext.generic.ui

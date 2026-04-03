@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase Windows Store extension
+Bundle-SymbolicName: org.jkiss.sqbase.ui.app.winstore;singleton:=true
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.0.102.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Require-Bundle: org.jkiss.sqbase.model
+Automatic-Module-Name: org.jkiss.sqbase.ui.app.winstore
+

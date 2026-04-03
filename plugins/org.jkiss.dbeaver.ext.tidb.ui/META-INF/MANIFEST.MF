@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase TiDB UI
+Bundle-SymbolicName: org.jkiss.sqbase.ext.tidb.ui;singleton:=true
+Bundle-Version: 1.0.57.qualifier
+Bundle-Release-Date: 20260420
+Require-Bundle: org.jkiss.sqbase.model.sql,
+ org.jkiss.sqbase.ext.generic,
+ org.jkiss.sqbase.ext.mysql,
+ org.jkiss.sqbase.ext.mysql.ui,
+ org.jkiss.sqbase.ext.tidb,
+ com.google.gson,
+ org.jkiss.sqbase.ui,
+ org.jkiss.sqbase.ui.editors.base,
+ org.jkiss.sqbase.ui.editors.connection
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Automatic-Module-Name: org.jkiss.sqbase.ext.tidb.ui

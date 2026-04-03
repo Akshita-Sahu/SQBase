@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Fragment-Host: org.eclipse.swt
+Bundle-Name: SWT Windows extensions
+Bundle-Vendor: SQBase Corp
+Bundle-SymbolicName: org.jkiss.sqbase.ui.swt.windows;singleton:=true
+Bundle-Version: 1.0.37.qualifier
+Bundle-ManifestVersion: 2
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+SWT-WS: win32
+SWT-OS: win32
+Eclipse-PlatformFilter: (& (osgi.ws=win32) (osgi.os=win32) )
+Export-Package: org.eclipse.swt.browser
+Require-Bundle: org.eclipse.swt
+Automatic-Module-Name: org.jkiss.sqbase.ui.swt.windows

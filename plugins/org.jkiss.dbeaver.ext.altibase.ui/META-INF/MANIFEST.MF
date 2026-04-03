@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase Altibase Support UI
+Bundle-SymbolicName: org.jkiss.sqbase.ext.altibase.ui;singleton:=true
+Bundle-Version: 1.0.38.qualifier
+Bundle-Release-Date: 20260420
+Require-Bundle: org.jkiss.sqbase.ext.generic,
+ org.jkiss.sqbase.ext.generic.ui,
+ org.jkiss.sqbase.model,
+ org.jkiss.sqbase.model.sql,
+ org.jkiss.sqbase.ui,
+ org.jkiss.sqbase.ui.editors.base,
+ org.jkiss.sqbase.ui.navigator,
+ org.jkiss.sqbase.ext.altibase,
+ org.jkiss.sqbase.ui.editors.session,
+ org.jkiss.sqbase.tasks.native.ui,
+ org.jkiss.sqbase.tasks.ui,
+ org.jkiss.sqbase.ui.editors.locks
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Bundle-Localization: OSGI-INF/l10n/bundle
+Export-Package: org.jkiss.sqbase.ext.altibase.ui.views
+Automatic-Module-Name: org.jkiss.sqbase.ext.altibase.ui

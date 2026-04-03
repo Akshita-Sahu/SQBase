@@ -1,0 +1,37 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase UI Navigator
+Bundle-SymbolicName: org.jkiss.sqbase.ui.navigator;singleton:=true
+Bundle-Version: 1.0.177.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.jkiss.sqbase.ui.internal.UINavigatorActivator
+Require-Bundle: org.eclipse.e4.ui.model.workbench,
+ org.eclipse.e4.ui.workbench.swt,
+ org.eclipse.e4.ui.workbench.renderers.swt,
+ com.google.gson,
+ org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.ui.editors.base;visibility:=reexport
+Export-Package: org.jkiss.sqbase.tools.project,
+ org.jkiss.sqbase.ui.actions,
+ org.jkiss.sqbase.ui.actions.datasource,
+ org.jkiss.sqbase.ui.actions.exec,
+ org.jkiss.sqbase.ui.controls,
+ org.jkiss.sqbase.ui.editors.entity,
+ org.jkiss.sqbase.ui.editors.entity.handlers,
+ org.jkiss.sqbase.ui.editors.entity.properties,
+ org.jkiss.sqbase.ui.internal,
+ org.jkiss.sqbase.ui.navigator,
+ org.jkiss.sqbase.ui.navigator.actions,
+ org.jkiss.sqbase.ui.navigator.breadcrumb,
+ org.jkiss.sqbase.ui.navigator.database,
+ org.jkiss.sqbase.ui.navigator.database.load,
+ org.jkiss.sqbase.ui.navigator.dialogs,
+ org.jkiss.sqbase.ui.navigator.itemlist,
+ org.jkiss.sqbase.ui.navigator.project,
+ org.jkiss.sqbase.ui.preferences,
+ org.jkiss.sqbase.ui.project,
+ org.jkiss.sqbase.ui.resources
+Automatic-Module-Name: org.jkiss.sqbase.ui.navigator

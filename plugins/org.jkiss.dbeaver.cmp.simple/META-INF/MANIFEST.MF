@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase Schema Compare (Simple)
+Bundle-SymbolicName: org.jkiss.sqbase.cmp.simple;singleton:=true
+Bundle-Version: 6.0.173.qualifier
+Bundle-Release-Date: 20260420
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: org.jkiss.sqbase.tools.compare.simple
+Require-Bundle: org.jkiss.sqbase.model;visibility:=reexport,
+ org.jkiss.sqbase.registry;visibility:=reexport,
+ org.jkiss.utils;visibility:=reexport
+Automatic-Module-Name: org.jkiss.sqbase.cmp.simple

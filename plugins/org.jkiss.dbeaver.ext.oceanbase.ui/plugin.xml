@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+    <extension point="org.jkiss.sqbase.dataSourceProvider">
+        <editorContribution
+                editorId="org.jkiss.sqbase.ext.mysql.ui.editors.MySQLSessionEditor"
+                category="connectionEditor" label="%editor.session_manager.name"
+                icon="platform:/plugin/org.jkiss.sqbase.model/icons/tree/sessions.svg">
+            <supports dataSource="oceanbase"/>
+        </editorContribution>
+    </extension>
+
+    <extension point="org.jkiss.sqbase.dataSourceView">
+        <view
+                id="org.jkiss.sqbase.ext.oceanbase.dataSourceWizardView"
+                dataSource="oceanbase"
+                targetID="org.jkiss.sqbase.ext.ui.newConnectionWizard"
+                label="%dialog.connection.header"
+                class="org.jkiss.sqbase.ext.oceanbase.ui.views.OceanbaseConnectionPage"
+                icon="platform:/plugin/org.jkiss.sqbase.ext.oceanbase/icons/ob_icon.png"/>
+        <view
+                id="org.jkiss.sqbase.ext.oceanbase.dataSourceEditorView"
+                dataSource="oceanbase"
+                targetID="org.jkiss.sqbase.ext.ui.editConnectionDialog"
+                label="%dialog.connection.header"
+                class="org.jkiss.sqbase.ext.oceanbase.ui.views.OceanbaseConnectionPage"
+                icon="platform:/plugin/org.jkiss.sqbase.ext.oceanbase/icons/ob_icon.png"/>
+    </extension>
+
+    <extension point="org.jkiss.sqbase.ui.propertyConfigurator">
+        <propertyConfigurator
+            class="org.jkiss.sqbase.ext.oceanbase.model.auth.OceanbaseAuthModelDatabaseNative"
+            uiClass="org.jkiss.sqbase.ui.dialogs.connection.DatabaseNativeAuthModelConfigurator"/>
+    </extension>
+
+</plugin>
+

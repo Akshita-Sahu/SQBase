@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+
+    <extension point="org.jkiss.sqbase.dataSourceView">
+        <view
+                id="org.jkiss.sqbase.ext.athena.dataSourceWizardView"
+                targetID="org.jkiss.sqbase.ext.ui.newConnectionWizard"
+                dataSource="athena"
+                label="%athena.dialog.connection.header"
+                class="org.jkiss.sqbase.ext.athena.ui.views.AthenaConnectionPage"
+                icon="platform:/plugin/org.jkiss.sqbase.ext.athena/icons/athena_icon.svg">
+        </view>
+        <view
+                class="org.jkiss.sqbase.ext.athena.ui.views.AthenaConnectionPage"
+                icon="platform:/plugin/org.jkiss.sqbase.ext.athena/icons/athena_icon.svg"
+                id="org.jkiss.sqbase.ext.athena.dataSourceEditorView"
+                dataSource="athena"
+                label="%athena.dialog.connection.header"
+                targetID="org.jkiss.sqbase.ext.ui.editConnectionDialog">
+        </view>
+    </extension>
+
+</plugin>

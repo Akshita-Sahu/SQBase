@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Base for standalone applications. Includes minimum set of plugins -->
+<feature
+        id="org.jkiss.sqbase.app.base.feature"
+        label="SQBase Base Standalone Application"
+        version="26.0.3.qualifier"
+        provider-name="SQBase Corp"
+        plugin="org.jkiss.sqbase.ui.app.standalone">
+
+    <description>SQBase Universal Database Manager base standalone application</description>
+
+    <copyright>SQBase Corp and others</copyright>
+    <license url="https://sqbase.io/product/sqbase_license.txt"/>
+
+    <includes id="org.jkiss.sqbase.rcp.feature" version="0.0.0"/>
+
+    <includes id="org.jkiss.sqbase.runtime.feature" version="0.0.0"/>
+    <includes id="org.jkiss.sqbase.ui.feature" version="0.0.0"/>
+    <includes id="org.jkiss.sqbase.db.feature" version="0.0.0"/>
+    <includes id="org.jkiss.sqbase.db.ui.feature" version="0.0.0"/>
+
+    <!-- SWT additions -->
+    <plugin id="org.jkiss.sqbase.ui.swt.linux" os="linux" version="0.0.0" />
+    <plugin id="org.jkiss.sqbase.ui.swt.macos" os="macosx" version="0.0.0" />
+    <plugin id="org.jkiss.sqbase.ui.swt.windows" os="win32" version="0.0.0" />
+
+    <!-- Logging -->
+
+    <plugin id="org.jkiss.sqbase.slf4j" version="0.0.0" />
+
+    <!-- Additional plugins for standalone version -->
+
+    <plugin id="org.eclipse.ui.ide.application" version="0.0.0" />
+    <!-- Launcher -->
+    <plugin id="org.jkiss.sqbase.launcher" version="0.0.0"/>
+    
+
+</feature>

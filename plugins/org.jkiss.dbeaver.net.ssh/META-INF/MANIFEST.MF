@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase SSH Tunnels
+Bundle-SymbolicName: org.jkiss.sqbase.net.ssh;singleton:=true
+Bundle-Version: 1.0.198.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Export-Package: org.jkiss.sqbase.model.net.ssh,
+ org.jkiss.sqbase.model.net.ssh.config,
+ org.jkiss.sqbase.model.net.ssh.registry
+Require-Bundle: org.eclipse.jsch.core,
+ org.jkiss.sqbase.model;visibility:=reexport,
+ org.jkiss.sqbase.registry,
+ com.jcraft.jsch
+Bundle-Localization: OSGI-INF/l10n/bundle
+Automatic-Module-Name: org.jkiss.sqbase.net.ssh

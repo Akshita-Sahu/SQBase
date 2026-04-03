@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+
+    <extension-point id="org.jkiss.sqbase.dataSourceView" name="%extension-point.org.jkiss.sqbase.dataSourceView.name" schema="schema/org.jkiss.sqbase.dataSourceView.exsd"/>
+    <extension-point id="org.jkiss.sqbase.ui.dataSourceConfigurator" name="%extension-point.org.jkiss.sqbase.ui.dataSourceConfigurator.name" schema="schema/org.jkiss.sqbase.ui.dataSourceConfigurator.exsd"/>
+
+    <extension point="org.jkiss.sqbase.ui.propertyConfigurator">
+        <propertyConfigurator class="org.jkiss.sqbase.model.impl.auth.AuthModelDatabaseNative" uiClass="org.jkiss.sqbase.ui.dialogs.connection.DatabaseNativeAuthModelConfigurator"/>
+    </extension>
+
+    <extension point="org.jkiss.sqbase.ui.dataSourceConfigurator">
+        <dataSourceConfigurator>
+<!--
+            <dataSourcePage class="org.jkiss.sqbase.ui.dialogs.connection.ConnectionPageGeneral"/>
+            <dataSourcePage class="org.jkiss.sqbase.ui.preferences.PrefPageMetaData"/>
+            <dataSourcePage class="org.jkiss.sqbase.ui.preferences.PrefPageErrorHandle"/>
+-->
+        </dataSourceConfigurator>
+    </extension>
+
+    <extension point="org.eclipse.ui.commands">
+        <command id="org.jkiss.sqbase.core.driver.manager" name="%command.org.jkiss.sqbase.core.driver.manager.name" description="%command.org.jkiss.sqbase.core.driver.manager.description" categoryId="org.jkiss.sqbase.core.navigator"/>
+        <command id="org.jkiss.sqbase.connection.changeCurrentPassword" name="%command.org.jkiss.sqbase.connection.changeCurrentPassword.name" description="%command.org.jkiss.sqbase.connection.changeCurrentPassword.description" categoryId="org.jkiss.sqbase.core.navigator"/>
+    </extension>
+
+    <extension point="org.jkiss.sqbase.workbenchHandler">
+        <workbenchWindowInitializer class="org.jkiss.sqbase.ui.UIEditorsWorkbenchInitializer" order="2"/>
+    </extension>
+
+    <extension point="org.eclipse.ui.commandImages">
+        <image commandId="org.jkiss.sqbase.core.driver.manager" icon="platform:/plugin/org.jkiss.sqbase.ui/icons/driver_manager.svg"/>
+    </extension>
+
+    <extension point="org.eclipse.ui.handlers">
+        <handler commandId="org.jkiss.sqbase.core.driver.manager" class="org.jkiss.sqbase.ui.actions.driver.DriverManagerDialogHandler">
+            <enabledWhen>
+                <test property="org.jkiss.sqbase.core.global.ui.hasPermission" value="driver-manager"/>
+            </enabledWhen>
+        </handler>
+        <handler commandId="org.jkiss.sqbase.connection.changeCurrentPassword" class="org.jkiss.sqbase.ui.actions.ChangePasswordDialogHandler">
+            <enabledWhen>
+                <with variable="selection">
+                    <count value="1"/>
+                    <iterate operator="and">
+                        <adapt type="org.jkiss.sqbase.model.navigator.DBNDataSource">
+                            <test property="org.jkiss.sqbase.ui.connection.canChangePassword" forcePluginActivation="true"/>
+                        </adapt>
+                    </iterate>
+                </with>
+            </enabledWhen>
+        </handler>
+    </extension>
+
+    <extension point="org.eclipse.ui.menus">
+
+        <menuContribution allPopups="false" locationURI="popup:org.eclipse.ui.popup.any?after=tools">
+            <menu label="%command.org.jkiss.sqbase.connection.security.name">
+                <command commandId="org.jkiss.sqbase.connection.changeCurrentPassword">
+                    <visibleWhen checkEnabled="true"/>
+                </command>
+            </menu>
+        </menuContribution>
+
+    </extension>
+
+    <extension point="org.eclipse.core.expressions.propertyTesters">
+        <propertyTester
+                class="org.jkiss.sqbase.ui.actions.ChangeUserPasswordPropertyTester"
+                id="org.jkiss.sqbase.ui.actions.ChangeUserPasswordPropertyTester"
+                namespace="org.jkiss.sqbase.ui.connection"
+                properties="canChangePassword"
+                type="org.jkiss.sqbase.model.navigator.DBNDataSource">
+        </propertyTester>
+    </extension>
+
+    <extension point="org.jkiss.sqbase.productFeature">
+        <feature id="database"/>
+        <feature parent="database" id="administration"/>
+        <feature parent="database/administration" id="advanced"/>
+    </extension>
+
+    <extension point="org.eclipse.ui.propertyPages">
+        <page class="org.jkiss.sqbase.ui.preferences.PrefPageProjectNetworkProfiles"
+              id="org.jkiss.sqbase.project.settings.networkProfiles"
+              name="%page.org.jkiss.sqbase.project.settings.networkProfiles.name" >
+            <enabledWhen>
+                <adapt type="org.eclipse.core.resources.IProject">
+                    <test property="org.eclipse.core.resources.projectNature" value="org.jkiss.sqbase.SQBaseNature"/>
+                </adapt>
+            </enabledWhen>
+        </page>
+    </extension>
+
+    <extension point="org.jkiss.sqbase.confirmations">
+        <confirmation
+                id="disconnect_txn"
+                title="%confirm.disconnect_txn.title"
+                description="%confirm.disconnect_txn.tip"
+                message="%confirm.disconnect_txn.message"
+                toggleMessage="default"
+                group="Connections"/>
+        <confirmation
+                id="reconnect_txn"
+                title="%confirm.reconnect_txn.title"
+                description="%confirm.reconnect_txn.tip"
+                message="%confirm.reconnect_txn.message"
+                toggleMessage="default"
+                group="Connections"/>
+    </extension>
+
+</plugin>

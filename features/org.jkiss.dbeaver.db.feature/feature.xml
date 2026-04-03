@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.jkiss.sqbase.db.feature"
+      label="SQBase Databases"
+      version="1.0.168.qualifier"
+      provider-name="SQBase Corp">
+
+   <copyright>SQBase Corp and others</copyright>
+   <license url="https://sqbase.io/product/sqbase_license.txt"/>
+
+   <plugin id="org.jkiss.sqbase.ext.db2" version="0.0.0"/>
+   <plugin id="org.jkiss.sqbase.ext.mysql" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.mssql" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.oracle" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.postgresql" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.generic" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.athena" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.bigquery" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.clickhouse" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.cubrid" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.db2.zos" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.db2.i" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.databend" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.derby" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.dameng" version="0.0.0"  />
+   <plugin id="org.jkiss.sqbase.ext.duckdb" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.exasol" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.firebird" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.gbase8s" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.greenplum" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.h2" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.hana" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.hive" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.hsqldb" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.informix" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.iotdb" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.netezza" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.oceanbase" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.tidb" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.phoenix" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.snowflake" version="0.0.0"/>
+   <plugin id="org.jkiss.sqbase.ext.spanner" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.sqlite" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.teradata" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.trino" version="0.0.0"  />
+   <plugin id="org.jkiss.sqbase.ext.vertica" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.ocient" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.denodo" version="0.0.0"  />
+   <plugin id="org.jkiss.sqbase.ext.databricks" version="0.0.0"  />
+   <plugin id="org.jkiss.sqbase.ext.altibase" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.gaussdb" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ext.kingbase" version="0.0.0" />
+
+   <plugin id="com.sqbase.jdbc.api" version="0.0.0"/>
+   <plugin id="com.sqbase.jdbc.driver.libsql" version="0.0.0"/>
+
+</feature>

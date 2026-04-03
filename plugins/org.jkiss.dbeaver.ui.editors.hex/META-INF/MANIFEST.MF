@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase UI Editors - Hex
+Bundle-SymbolicName: org.jkiss.sqbase.ui.editors.hex;singleton:=true
+Bundle-Version: 1.0.177.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.jkiss.sqbase.ui.editors.binary.internal.HexEditorsActivator
+Require-Bundle: org.jkiss.sqbase.ui.editors.base,
+ org.jkiss.sqbase.ui.editors.data
+Export-Package: org.jkiss.sqbase.ui.editors.binary,
+ org.jkiss.sqbase.ui.editors.binary.pref
+Automatic-Module-Name: org.jkiss.sqbase.ui.editors.hex

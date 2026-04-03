@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+
+    <extension point="org.eclipse.ui.commands">
+        <category id="org.jkiss.sqbase.ext.data.office" name="%category.org.jkiss.sqbase.ext.data.office.name" description="%category.org.jkiss.sqbase.ext.data.office.description"/>
+        <command id="org.jkiss.sqbase.ext.data.office.results.openSpreadsheet" name="%command.org.jkiss.sqbase.ext.data.office.results.openSpreadsheet.name" description="%command.org.jkiss.sqbase.ext.data.office.results.openSpreadsheet.description" categoryId="org.jkiss.sqbase.ext.data.office"/>
+    </extension>
+
+    <extension point="org.eclipse.ui.commandImages">
+        <image commandId="org.jkiss.sqbase.ext.data.office.results.openSpreadsheet" icon="platform:/plugin/org.jkiss.sqbase.data.office/icons/excel.svg"/>
+    </extension>
+
+    <extension point="org.eclipse.ui.handlers">
+        <handler commandId="org.jkiss.sqbase.ext.data.office.results.openSpreadsheet" class="org.jkiss.sqbase.data.office.handlers.OpenSpreadsheetHandler">
+            <enabledWhen>
+                <with variable="activePart">
+                    <test property="org.jkiss.sqbase.core.resultset.hasData"/>
+                </with>
+            </enabledWhen>
+        </handler>
+    </extension>
+
+</plugin>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.jkiss.sqbase</groupId>
+        <artifactId>sqbase</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+    <artifactId>features</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>org.jkiss.sqbase.runtime.feature</module>
+        <module>org.jkiss.sqbase.db.feature</module>
+    </modules>
+
+    <profiles>
+        <profile>
+            <id>desktop</id>
+            <activation><property><name>!headless-platform</name></property></activation>
+            <!-- Desktop (swt/jface) components -->
+            <modules>
+                <module>org.jkiss.sqbase.rcp.feature</module>
+                <module>org.jkiss.sqbase.ui.feature</module>
+                <module>org.jkiss.sqbase.ui.extra.feature</module>
+                <module>org.jkiss.sqbase.debug.feature</module>
+
+                <module>org.jkiss.sqbase.db.ui.feature</module>
+                <module>org.jkiss.sqbase.git.feature</module>
+                <module>org.jkiss.sqbase.ext.office.feature</module>
+
+                <module>org.jkiss.sqbase.ide.feature</module>
+                <module>org.jkiss.sqbase.app.base.feature</module>
+                <module>org.jkiss.sqbase.app.local.feature</module>
+                <module>org.jkiss.sqbase.standalone.feature</module>
+                <module>org.jkiss.sqbase.test.feature</module>
+                <module>org.jkiss.sqbase.test.base.feature</module>
+                <module>org.jkiss.sqbase.appstore.feature</module>
+                <module>org.jkiss.sqbase.ce.feature</module>
+            </modules>
+        </profile>
+    </profiles>
+
+</project>

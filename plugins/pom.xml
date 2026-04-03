@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.jkiss.sqbase</groupId>
+        <artifactId>sqbase</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+    <artifactId>plugins</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>org.jkiss.sqbase.launcher</module>
+        <module>org.jkiss.sqbase.model</module>
+        <module>org.jkiss.sqbase.model.ai</module>
+        <module>org.jkiss.sqbase.model.cli</module>
+        <module>org.jkiss.sqbase.model.event</module>
+        <module>org.jkiss.sqbase.model.dashboard</module>
+        <module>org.jkiss.sqbase.model.erd</module>
+        <module>org.jkiss.sqbase.model.jdbc</module>
+        <module>org.jkiss.sqbase.model.lsm</module>
+        <module>org.jkiss.sqbase.model.nio</module>
+        <module>org.jkiss.sqbase.model.rcp</module>
+        <module>org.jkiss.sqbase.model.sm</module>
+        <module>org.jkiss.sqbase.model.sql</module>
+        <module>org.jkiss.sqbase.model.sql.jdbc</module>
+        <module>org.jkiss.sqbase.model.lsp</module>
+        <module>org.jkiss.sqbase.registry</module>
+
+        <module>org.jkiss.sqbase.cmp.simple</module>
+
+        <module>org.jkiss.sqbase.ext.generic</module>
+
+
+        <module>org.jkiss.sqbase.ext.athena</module>
+        <module>org.jkiss.sqbase.ext.bigquery</module>
+        <module>org.jkiss.sqbase.ext.clickhouse</module>
+        <module>org.jkiss.sqbase.ext.cubrid</module>
+        <module>org.jkiss.sqbase.ext.databend</module>
+        <module>org.jkiss.sqbase.ext.databricks</module>
+        <module>org.jkiss.sqbase.ext.db2</module>
+        <module>org.jkiss.sqbase.ext.db2.zos</module>
+        <module>org.jkiss.sqbase.ext.db2.i</module>
+        <module>org.jkiss.sqbase.ext.derby</module>
+        <module>org.jkiss.sqbase.ext.dameng</module>
+        <module>org.jkiss.sqbase.ext.duckdb</module>
+        <module>org.jkiss.sqbase.ext.exasol</module>
+        <module>org.jkiss.sqbase.ext.firebird</module>
+        <module>org.jkiss.sqbase.ext.gbase8s</module>
+        <module>org.jkiss.sqbase.ext.greenplum</module>
+        <module>org.jkiss.sqbase.ext.h2</module>
+        <module>org.jkiss.sqbase.ext.hana</module>
+        <module>org.jkiss.sqbase.ext.hive</module>
+        <module>org.jkiss.sqbase.ext.hsqldb</module>
+        <module>org.jkiss.sqbase.ext.informix</module>
+        <module>org.jkiss.sqbase.ext.iotdb</module>
+        <module>org.jkiss.sqbase.ext.kingbase</module>
+        <module>org.jkiss.sqbase.ext.mssql</module>
+        <module>org.jkiss.sqbase.ext.mysql</module>
+        <module>org.jkiss.sqbase.ext.netezza</module>
+        <module>org.jkiss.sqbase.ext.oceanbase</module>
+        <module>org.jkiss.sqbase.ext.ocient</module>
+        <module>org.jkiss.sqbase.ext.oracle</module>
+        <module>org.jkiss.sqbase.ext.phoenix</module>
+
+        <module>org.jkiss.sqbase.ext.postgresql</module>
+
+        <module>org.jkiss.sqbase.ext.snowflake</module>
+        <module>org.jkiss.sqbase.ext.spanner</module>
+        <module>org.jkiss.sqbase.ext.sqlite</module>
+        <module>org.jkiss.sqbase.ext.vertica</module>
+        <module>org.jkiss.sqbase.ext.teradata</module>
+        <module>org.jkiss.sqbase.ext.tidb</module>
+        <module>org.jkiss.sqbase.ext.trino</module>
+        <module>org.jkiss.sqbase.ext.denodo</module>
+        <module>org.jkiss.sqbase.ext.altibase</module>
+        <module>org.jkiss.sqbase.ext.gaussdb</module>
+        
+        <module>org.jkiss.sqbase.tasks.native</module>
+
+        <module>org.jkiss.sqbase.data.office</module>
+        <module>org.jkiss.sqbase.data.transfer</module>
+        <module>org.jkiss.sqbase.data.gis</module>
+
+        <module>org.jkiss.sqbase.debug.core</module>
+
+        <module>org.jkiss.sqbase.net.ssh</module>
+        <module>org.jkiss.sqbase.net.ssh.jsch</module>
+        <module>org.jkiss.sqbase.net.ssh.sshj</module>
+        <module>org.jkiss.sqbase.slf4j</module>
+
+        <module>org.jkiss.sqbase.headless</module>
+        <module>org.jkiss.sqbase.osgi.test.runner</module>
+    </modules>
+
+    <profiles>
+        <profile>
+            <id>desktop</id>
+            <activation><property><name>!headless-platform</name></property></activation>
+            <!-- Desktop (swt/jface) components -->
+            <modules>
+                <module>org.jkiss.sqbase.launcher</module>
+                <module>org.jkiss.sqbase.core</module>
+                <module>org.jkiss.sqbase.ui.app.standalone</module>
+                <module>org.jkiss.sqbase.ui.app.eclipse</module>
+                <module>org.jkiss.sqbase.ui.app.winstore</module>
+                <module>org.jkiss.sqbase.ext.athena.ui</module>
+                <module>org.jkiss.sqbase.ext.bigquery.ui</module>
+                <module>org.jkiss.sqbase.ext.clickhouse.ui</module>
+                <module>org.jkiss.sqbase.ext.cubrid.ui</module>
+                <module>org.jkiss.sqbase.ext.dameng.ui</module>
+                <module>org.jkiss.sqbase.ext.databend.ui</module>
+                <module>org.jkiss.sqbase.ext.exasol.ui</module>
+                <module>org.jkiss.sqbase.ext.db2.ui</module>
+                <module>org.jkiss.sqbase.ext.duckdb.ui</module>
+                <module>org.jkiss.sqbase.ext.generic.ui</module>
+                <module>org.jkiss.sqbase.ext.hana.ui</module>
+                <module>org.jkiss.sqbase.ext.iotdb.ui</module>
+                <module>org.jkiss.sqbase.ext.kingbase.ui</module>
+                <module>org.jkiss.sqbase.ext.mssql.ui</module>
+                <module>org.jkiss.sqbase.ext.mysql.ui</module>
+                <module>org.jkiss.sqbase.ext.oceanbase.ui</module>
+                <module>org.jkiss.sqbase.ext.oracle.ui</module>
+
+                <module>org.jkiss.sqbase.ext.postgresql.ui</module>
+                <module>org.jkiss.sqbase.ext.postgresql.debug.core</module>
+                <module>org.jkiss.sqbase.ext.postgresql.debug.ui</module>
+                <module>org.jkiss.sqbase.ext.sqlite.ui</module>
+                <module>org.jkiss.sqbase.ext.spanner.ui</module>
+                <module>org.jkiss.sqbase.ext.snowflake.ui</module>
+                <module>org.jkiss.sqbase.ext.vertica.ui</module>
+                <module>org.jkiss.sqbase.ext.tidb.ui</module>
+                <module>org.jkiss.sqbase.ext.altibase.ui</module>
+
+                <module>org.jkiss.sqbase.ext.wmi</module>
+
+                <module>org.jkiss.sqbase.ui</module>
+                <module>org.jkiss.sqbase.ui.editors.acl</module>
+                <module>org.jkiss.sqbase.ui.editors.base</module>
+                <module>org.jkiss.sqbase.ui.editors.connection</module>
+                <module>org.jkiss.sqbase.ui.editors.data</module>
+                <module>org.jkiss.sqbase.ui.editors.entity</module>
+                <module>org.jkiss.sqbase.ui.editors.erd</module>
+                <module>org.jkiss.sqbase.ui.editors.hex</module>
+                <module>org.jkiss.sqbase.ui.editors.image</module>
+                <module>org.jkiss.sqbase.ui.editors.json</module>
+                <module>org.jkiss.sqbase.ui.editors.locks</module>
+                <module>org.jkiss.sqbase.ui.editors.sql</module>
+                <module>org.jkiss.sqbase.ui.ai</module>
+                <module>org.jkiss.sqbase.ui.editors.sql.terminal</module>
+                <module>org.jkiss.sqbase.ui.editors.session</module>
+                <module>org.jkiss.sqbase.ui.editors.xml</module>
+                <module>org.jkiss.sqbase.ui.navigator</module>
+                <module>org.jkiss.sqbase.ui.forms</module>
+                <module>org.jkiss.sqbase.ui.charts</module>
+                <module>org.jkiss.sqbase.ui.dashboard</module>
+                <module>org.jkiss.sqbase.ui.search</module>
+                <module>org.jkiss.sqbase.ui.statistics</module>
+
+                <module>org.jkiss.sqbase.ui.swt.linux</module>
+                <module>org.jkiss.sqbase.ui.swt.macos</module>
+                <module>org.jkiss.sqbase.ui.swt.windows</module>
+
+                <module>org.jkiss.sqbase.tasks.native.ui</module>
+                <module>org.jkiss.sqbase.tasks.ui</module>
+                <module>org.jkiss.sqbase.tasks.ui.view</module>
+                <module>org.jkiss.sqbase.tasks.sql.ui</module>
+
+                <module>org.jkiss.sqbase.data.office.ui</module>
+                <module>org.jkiss.sqbase.ui.config.sample</module>
+                <module>org.jkiss.sqbase.ui.config.migration</module>
+                <module>org.jkiss.sqbase.cmp.simple.ui</module>
+
+                <module>org.jkiss.sqbase.debug.ui</module>
+
+                <module>org.jkiss.sqbase.data.transfer.ui</module>
+                <module>org.jkiss.sqbase.data.gis.view</module>
+                <module>org.jkiss.sqbase.net.ssh.ui</module>
+
+                <module>org.jkiss.sqbase.ext.gaussdb.ui</module>
+
+                <module>org.jkiss.sqbase.team.git.ui</module>
+
+                <module>org.jkiss.sqbase.ui.app.devtools</module>
+            </modules>
+        </profile>
+    </profiles>
+
+</project>

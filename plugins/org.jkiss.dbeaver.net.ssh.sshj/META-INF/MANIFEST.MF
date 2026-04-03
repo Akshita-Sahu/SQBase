@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase SSH implementation (SSHJ)
+Bundle-SymbolicName: org.jkiss.sqbase.net.ssh.sshj;singleton:=true
+Bundle-Version: 1.0.198.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.jkiss.sqbase.model,
+ org.jkiss.sqbase.net.ssh,
+ org.jkiss.bundle.sshj,
+ com.jcraft.jsch
+Import-Package: org.slf4j,
+ org.slf4j.helpers
+Automatic-Module-Name: org.jkiss.sqbase.net.ssh.sshj

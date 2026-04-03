@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+    <description name="SQBase - SQL debugger" url="https://sqbase.io/update/debug/latest">SQBase - SQL debugger</description>
+
+    <feature id="org.jkiss.sqbase.debug.feature">
+        <category name="org.jkiss.sqbase.debug.category"/>
+    </feature>
+    <category-def name="org.jkiss.sqbase.debug.category" label="SQBase SQL Debugger (PostgreSQL)"/>
+</site>

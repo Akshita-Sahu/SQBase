@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase Dashboard UI
+Bundle-SymbolicName: org.jkiss.sqbase.ui.dashboard;singleton:=true
+Bundle-Version: 1.0.174.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.jkiss.sqbase.ui.dashboard.internal.UIDashboardActivator
+Require-Bundle: org.apache.commons.jexl,
+ org.jkiss.sqbase.tasks.ui,
+ org.jkiss.sqbase.ui.charts;visibility:=reexport,
+ org.jkiss.sqbase.ui.editors.base,
+ org.jkiss.sqbase.ui.navigator,
+ org.jkiss.sqbase.model.dashboard;visibility:=reexport
+Export-Package: org.jkiss.sqbase.ui.dashboard,
+ org.jkiss.sqbase.ui.dashboard.browser,
+ org.jkiss.sqbase.ui.dashboard.control,
+ org.jkiss.sqbase.ui.dashboard.internal,
+ org.jkiss.sqbase.ui.dashboard.model,
+ org.jkiss.sqbase.ui.dashboard.view
+Automatic-Module-Name: org.jkiss.sqbase.ui.dashboard
+Bundle-Localization: OSGI-INF/l10n/bundle

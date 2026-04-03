@@ -1,0 +1,41 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase PostgreSQL Model
+Bundle-SymbolicName: org.jkiss.sqbase.ext.postgresql;singleton:=true
+Bundle-Version: 2.1.250.qualifier
+Bundle-Release-Date: 20260420
+Require-Bundle: org.jkiss.sqbase.model;visibility:=reexport,
+ org.jkiss.sqbase.model.jdbc;visibility:=reexport,
+ org.jkiss.sqbase.model.sql,
+ org.jkiss.sqbase.model.sql.jdbc,
+ org.jkiss.sqbase.ext.generic,
+ org.jkiss.sqbase.data.gis;visibility:=reexport,
+ org.jkiss.bundle.gis;visibility:=reexport,
+ org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.tasks.native;visibility:=reexport,
+ com.sun.jna,
+ com.sun.jna.platform,
+ com.google.gson
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Export-Package: org.jkiss.sqbase.ext.postgresql,
+ org.jkiss.sqbase.ext.postgresql.edit,
+ org.jkiss.sqbase.ext.postgresql.backup,
+ org.jkiss.sqbase.ext.postgresql.model,
+ org.jkiss.sqbase.ext.postgresql.model.data,
+ org.jkiss.sqbase.ext.postgresql.model.fdw,
+ org.jkiss.sqbase.ext.postgresql.model.impls,
+ org.jkiss.sqbase.ext.postgresql.model.jdbc,
+ org.jkiss.sqbase.ext.postgresql.model.lock,
+ org.jkiss.sqbase.ext.postgresql.model.net,
+ org.jkiss.sqbase.ext.postgresql.model.plan,
+ org.jkiss.sqbase.ext.postgresql.model.session,
+ org.jkiss.sqbase.ext.postgresql.model.impls.cockroach,
+ org.jkiss.sqbase.ext.postgresql.model.impls.materialize,
+ org.jkiss.sqbase.ext.postgresql.model.impls.redshift,
+ org.jkiss.sqbase.ext.postgresql.model.impls.yellowbrick,
+ org.jkiss.sqbase.ext.postgresql.tasks
+Bundle-Localization: OSGI-INF/l10n/bundle
+Automatic-Module-Name: org.jkiss.sqbase.ext.postgresql
+

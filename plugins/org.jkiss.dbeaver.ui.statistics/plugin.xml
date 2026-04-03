@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+    <extension point="org.eclipse.core.runtime.adapters">
+        <factory adaptableType="org.jkiss.sqbase.model.runtime.features.DBRFeatureRegistry" class="org.jkiss.sqbase.ui.statistics.StatisticsAdapterFactory">
+            <adapter type="org.jkiss.sqbase.model.runtime.features.DBRFeatureTracker"/>
+        </factory>
+    </extension>
+
+    <extension point="org.jkiss.sqbase.workbenchHandler">
+        <workbenchWindowInitializer class="org.jkiss.sqbase.ui.statistics.WorkbenchInitializerDataShareConfirm" order="2"/>
+    </extension>
+
+    <extension point="org.eclipse.ui.preferencePages">
+        <page category="org.eclipse.ui.preferencePages.Workbench"
+              id="org.jkiss.sqbase.preferences.main.usageStatistics"
+              class="org.jkiss.sqbase.ui.statistics.PrefPageUsageStatistics"
+              name="%page.org.jkiss.sqbase.preferences.main.usageStatistics"/>
+    </extension>
+
+</plugin>

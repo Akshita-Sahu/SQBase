@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase Tasks - Native Tools UI
+Bundle-SymbolicName: org.jkiss.sqbase.tasks.native.ui;singleton:=true
+Bundle-Version: 1.0.155.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.ui.console,
+ org.jkiss.sqbase.model.sql,
+ org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.ui.navigator,
+ org.jkiss.sqbase.ui.editors.connection;visibility:=reexport,
+ org.jkiss.sqbase.tasks.native;visibility:=reexport,
+ org.jkiss.sqbase.tasks.ui;visibility:=reexport
+Export-Package: org.jkiss.sqbase.tasks.ui.nativetool
+Automatic-Module-Name: org.jkiss.sqbase.tasks.native.ui

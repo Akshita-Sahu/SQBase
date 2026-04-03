@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase MySQL Support
+Bundle-SymbolicName: org.jkiss.sqbase.ext.mysql;singleton:=true
+Bundle-Version: 2.1.262.qualifier
+Bundle-Release-Date: 20260420
+Require-Bundle: org.jkiss.sqbase.model;visibility:=reexport,
+ org.jkiss.sqbase.model.jdbc;visibility:=reexport,
+ org.jkiss.sqbase.model.sql,
+ org.jkiss.sqbase.data.gis;visibility:=reexport,
+ org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.tasks.native,
+ com.google.gson
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Export-Package: org.jkiss.sqbase.ext.mysql,
+ org.jkiss.sqbase.ext.mysql.model,
+ org.jkiss.sqbase.ext.mysql.model.plan,
+ org.jkiss.sqbase.ext.mysql.model.session,
+ org.jkiss.sqbase.ext.mysql.tasks
+Automatic-Module-Name: org.jkiss.sqbase.ext.mysql

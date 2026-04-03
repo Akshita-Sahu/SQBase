@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase Derby Model
+Bundle-SymbolicName: org.jkiss.sqbase.ext.derby;singleton:=true
+Bundle-Version: 1.1.262.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.jkiss.sqbase.model,
+ org.jkiss.sqbase.ext.generic
+Automatic-Module-Name: org.jkiss.sqbase.ext.derby

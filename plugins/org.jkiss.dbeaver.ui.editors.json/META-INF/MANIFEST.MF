@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase UI Editors - JSON
+Bundle-SymbolicName: org.jkiss.sqbase.ui.editors.json;singleton:=true
+Bundle-Version: 1.0.161.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Require-Bundle: com.google.gson,
+ org.jkiss.sqbase.ui.editors.base,
+ org.jkiss.sqbase.ui.editors.data
+Export-Package: org.jkiss.sqbase.ui.editors.json,
+ org.jkiss.sqbase.ui.data.managers.stream
+Automatic-Module-Name: org.jkiss.sqbase.ui.editors.json

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+    <extension point="org.jkiss.sqbase.dataManager">
+        <streamManager class="org.jkiss.sqbase.ui.data.BinaryStreamValueManager" id="binary" label="Binary" primaryMime="octet/binary" supportedMime="text,binary,app,application"
+                       description="Hex editor" icon="platform:/plugin/org.jkiss.sqbase.model/icons/types/binary.svg"/>
+    </extension>
+
+    <extension point="org.jkiss.sqbase.service">
+        <service name="org.jkiss.sqbase.ui.data.IHexEditorService" class="org.jkiss.sqbase.ui.editors.binary.HexEditorService"/>
+    </extension>
+
+    <extension point="org.eclipse.ui.themes">
+
+        <!-- Colors for Hex editor -->
+        <themeElementCategory label="%themeElementCategory.org.jkiss.sqbase.ui.presentation.hex.label" id="org.jkiss.sqbase.ui.presentation.hex">
+            <description>%themeElementCategory.org.jkiss.sqbase.ui.presentation.hex.description</description>
+        </themeElementCategory>
+
+        <colorDefinition
+            label="%colorDefinition.org.jkiss.sqbase.hex.editor.color.caret.label"
+            categoryId="org.jkiss.sqbase.ui.presentation.hex"
+            id="org.jkiss.sqbase.hex.editor.color.caret"
+            value="232,242,254">
+            <description>%colorDefinition.org.jkiss.sqbase.hex.editor.color.caret.description</description>
+        </colorDefinition>
+        <colorDefinition
+            label="%colorDefinition.org.jkiss.sqbase.hex.editor.color.text.label"
+            categoryId="org.jkiss.sqbase.ui.presentation.hex"
+            id="org.jkiss.sqbase.hex.editor.color.text"
+            value="COLOR_BLACK">
+            <description>%colorDefinition.org.jkiss.sqbase.hex.editor.color.text.description</description>
+        </colorDefinition>
+
+    </extension>
+
+    <extension point="org.eclipse.ui.handlers">
+        <handler commandId="org.eclipse.ui.edit.copy" class="org.jkiss.sqbase.ui.editors.binary.HexCommandHandler">
+            <activeWhen><with variable="activeFocusControlId"><equals value="org.jkiss.sqbase.ui.hexEditor"/></with></activeWhen>
+        </handler>
+        <handler commandId="org.eclipse.ui.edit.paste" class="org.jkiss.sqbase.ui.editors.binary.HexCommandHandler">
+            <activeWhen><with variable="activeFocusControlId"><equals value="org.jkiss.sqbase.ui.hexEditor"/></with></activeWhen>
+        </handler>
+    </extension>
+
+    <extension point="org.eclipse.ui.preferencePages">
+        <page category="org.jkiss.sqbase.preferences.main.resultset.editors" id="org.jkiss.sqbase.ui.editors.binary.pref.HexPreferencesPage" class="org.jkiss.sqbase.ui.editors.binary.pref.HexPreferencesPage" name="%pref.page.name.binary.editor">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.pref.editor.binary"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+        </page>
+    </extension>
+
+</plugin>

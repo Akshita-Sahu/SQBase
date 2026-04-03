@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="db-platform">
+  <service>
+    <provide interface="org.jkiss.sqbase.model.app.DBPApplicationWorkbench"/>
+  </service>
+<!--
+  <reference field="platformInstance" interface="org.jkiss.sqbase.model.app.DBPPlatform"/>
+  <reference field="platformUIInstance" interface="org.jkiss.sqbase.runtime.ui.DBPPlatformUI"/>
+-->
+  <implementation class="org.jkiss.sqbase.model.impl.app.ApplicationWorkbenchImpl"/>
+</scr:component>

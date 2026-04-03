@@ -1,0 +1,42 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase UI Editors - Data
+Bundle-SymbolicName: org.jkiss.sqbase.ui.editors.data;singleton:=true
+Bundle-Version: 1.0.177.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.jkiss.sqbase.ui.editors.data.internal.DataEditorsActivator
+Require-Bundle: org.eclipse.ui.workbench.texteditor,
+ org.jkiss.sqbase.data.transfer.ui,
+ org.jkiss.sqbase.model.sql,
+ org.jkiss.sqbase.tasks.ui,
+ org.jkiss.sqbase.ui.editors.base;visibility:=reexport,
+ org.jkiss.sqbase.ui.editors.entity;visibility:=reexport,
+ org.jkiss.sqbase.ui.navigator;visibility:=reexport,
+ org.jkiss.sqbase.registry,
+ com.google.gson
+Export-Package: org.jkiss.sqbase.registry.functions,
+ org.jkiss.sqbase.ui,
+ org.jkiss.sqbase.ui.controls,
+ org.jkiss.sqbase.ui.controls.lightgrid,
+ org.jkiss.sqbase.ui.controls.resultset,
+ org.jkiss.sqbase.ui.controls.resultset.generator,
+ org.jkiss.sqbase.ui.controls.resultset.handler,
+ org.jkiss.sqbase.ui.controls.resultset.internal,
+ org.jkiss.sqbase.ui.controls.resultset.panel,
+ org.jkiss.sqbase.ui.controls.resultset.plaintext,
+ org.jkiss.sqbase.ui.controls.resultset.spreadsheet,
+ org.jkiss.sqbase.ui.controls.resultset.view,
+ org.jkiss.sqbase.ui.data,
+ org.jkiss.sqbase.ui.data.dialogs,
+ org.jkiss.sqbase.ui.data.editors,
+ org.jkiss.sqbase.ui.data.managers,
+ org.jkiss.sqbase.ui.data.managers.stream,
+ org.jkiss.sqbase.ui.data.registry,
+ org.jkiss.sqbase.ui.editors.content,
+ org.jkiss.sqbase.ui.editors.data,
+ org.jkiss.sqbase.ui.editors.data.preferences
+Automatic-Module-Name: org.jkiss.sqbase.ui.editors.data
+

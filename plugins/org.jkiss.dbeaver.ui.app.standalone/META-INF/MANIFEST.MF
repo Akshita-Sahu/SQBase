@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase Application Standalone
+Bundle-SymbolicName: org.jkiss.sqbase.ui.app.standalone;singleton:=true
+Bundle-Activator: org.jkiss.sqbase.ui.app.standalone.internal.CoreApplicationActivator
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 26.0.3.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: org.jkiss.sqbase.ui.app.standalone,
+ org.jkiss.sqbase.ui.app.standalone.rpc,
+ org.jkiss.sqbase.ui.app.standalone.update
+Import-Package: org.w3c.css.sac
+Require-Bundle: org.eclipse.e4.ui.css.core,
+ org.eclipse.e4.ui.css.swt,
+ org.eclipse.e4.ui.model.workbench,
+ org.eclipse.e4.ui.workbench,
+ org.eclipse.e4.ui.workbench.renderers.swt,
+ org.eclipse.help,
+ org.eclipse.search,
+ org.eclipse.core.net,
+ org.eclipse.ui.ide.application;visibility:=reexport,
+ com.google.gson,
+ org.jkiss.sqbase.model,
+ org.jkiss.sqbase.model.cli;visibility:=reexport,
+ org.jkiss.sqbase.model.rcp,
+ org.jkiss.sqbase.core,
+ org.jkiss.sqbase.ui,
+ org.jkiss.sqbase.ui.editors.base,
+ org.eclipse.ui.views.log
+Automatic-Module-Name: org.jkiss.sqbase.ui.app.standalone

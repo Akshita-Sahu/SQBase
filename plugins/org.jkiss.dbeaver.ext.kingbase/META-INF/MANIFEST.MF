@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase Kingbase Model
+Bundle-SymbolicName: org.jkiss.sqbase.ext.kingbase;singleton:=true
+Bundle-Version: 1.0.22.qualifier
+Bundle-Release-Date: 20260420
+Require-Bundle: org.jkiss.sqbase.model;visibility:=reexport,
+ org.jkiss.sqbase.model.jdbc;visibility:=reexport,
+ org.jkiss.sqbase.model.sql,
+ org.jkiss.sqbase.ext.postgresql,
+ org.jkiss.sqbase.model.sql.jdbc,
+ org.jkiss.sqbase.ext.generic,
+ org.jkiss.sqbase.data.gis;visibility:=reexport,
+ org.jkiss.bundle.gis;visibility:=reexport,
+ org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.tasks.native;visibility:=reexport,
+ com.google.gson,
+ org.jkiss.sqbase.model.sql
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Export-Package: org.jkiss.sqbase.ext.kingbase,
+ org.jkiss.sqbase.ext.kingbase.model
+Bundle-Localization: OSGI-INF/l10n/bundle
+Automatic-Module-Name: org.jkiss.sqbase.ext.kingbase
+

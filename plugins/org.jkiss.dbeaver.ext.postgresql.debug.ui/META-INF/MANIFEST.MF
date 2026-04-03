@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase PostgreSQL Debug UI
+Bundle-SymbolicName: org.jkiss.sqbase.ext.postgresql.debug.ui;singleton:=true
+Bundle-Version: 1.0.206.qualifier
+Bundle-Release-Date: 20260420
+Bundle-Vendor: SQBase Corp
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.jkiss.sqbase.debug.core,
+ org.jkiss.sqbase.debug.ui,
+ org.jkiss.sqbase.ext.postgresql,
+ org.jkiss.sqbase.ext.postgresql.ui,
+ org.jkiss.sqbase.ext.postgresql.debug.core,
+ org.eclipse.ui
+Automatic-Module-Name: org.jkiss.sqbase.ext.postgresql.debug.ui

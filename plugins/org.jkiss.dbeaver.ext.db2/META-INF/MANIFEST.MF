@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase IBM DB2 Model
+Bundle-SymbolicName: org.jkiss.sqbase.ext.db2;singleton:=true
+Bundle-Version: 2.1.262.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.jkiss.sqbase.model;visibility:=reexport,
+ org.jkiss.sqbase.model.jdbc;visibility:=reexport,
+ org.jkiss.sqbase.model.sql;visibility:=reexport,
+ org.jkiss.sqbase.registry
+Export-Package: org.jkiss.sqbase.ext.db2,
+ org.jkiss.sqbase.ext.db2.data,
+ org.jkiss.sqbase.ext.db2.editors,
+ org.jkiss.sqbase.ext.db2.model,
+ org.jkiss.sqbase.ext.db2.model.app,
+ org.jkiss.sqbase.ext.db2.model.dict,
+ org.jkiss.sqbase.ext.db2.tasks
+Automatic-Module-Name: org.jkiss.sqbase.ext.db2

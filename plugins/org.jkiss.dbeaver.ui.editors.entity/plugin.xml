@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+
+    <extension point="org.jkiss.sqbase.databaseEditor">
+        <configurator class="org.jkiss.sqbase.ui.editors.object.config.EntityAttributeConfigurator">
+            <objectType name="org.jkiss.sqbase.model.struct.DBSEntityAttribute"/>
+        </configurator>
+    </extension>
+
+</plugin>

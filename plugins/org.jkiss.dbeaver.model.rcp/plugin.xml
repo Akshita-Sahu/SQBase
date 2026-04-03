@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+    <extension-point id="org.jkiss.sqbase.resourceHandler" name="%extension-point.org.jkiss.sqbase.resourceHandler.name" schema="schema/org.jkiss.sqbase.resourceHandler.exsd"/>
+
+    <extension point="org.jkiss.sqbase.navigator">
+        <extender id="dbvfs" root="true" nodeDisplayName="File systems" nodeType="org.jkiss.sqbase.model.navigator.fs.DBNFileSystems" class="org.jkiss.sqbase.model.navigator.RCPNavigatorExtender"/>
+    </extension>
+
+    <extension point="org.eclipse.core.resources.natures" id="org.jkiss.sqbase.SQBaseNature"
+               name="%extension.org.jkiss.sqbase.SQBaseNature.name">
+        <runtime>
+            <run class="org.jkiss.sqbase.model.rcp.SQBaseNature">
+            </run>
+        </runtime>
+    </extension>
+
+    <extension point="org.eclipse.core.filesystem.filesystems">
+        <filesystem scheme="dbvfs">
+            <run class="org.jkiss.sqbase.model.fs.nio.EFSNIOFileSystem"/>
+        </filesystem>
+    </extension>
+
+    <extension point="org.jkiss.sqbase.resourceType">
+        <type id="project">
+            <resourceTypeBinding resourceType="org.eclipse.core.resources.IProject"/>
+        </type>
+        <type id="bookmark" name="Navigator bookmarks" icon="platform:/plugin/org.jkiss.sqbase.ui/icons/bookmark_folder.svg" managable="true">
+            <root folder="Bookmarks"/>
+            <contentTypeBinding contentTypeId="org.jkiss.sqbase.bookmark"/>
+        </type>
+        <type id="shortcut">
+            <contentTypeBinding contentTypeId="org.jkiss.sqbase.shortcut"/>
+        </type>
+    </extension>
+
+</plugin>

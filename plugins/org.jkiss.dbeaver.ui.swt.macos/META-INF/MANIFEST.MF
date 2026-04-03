@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Fragment-Host: org.eclipse.swt
+Bundle-Name: SQBase MacOS SWT extensions
+Bundle-Vendor: SQBase Corp
+Bundle-SymbolicName: org.jkiss.sqbase.ui.swt.macos;singleton:=true
+Bundle-Version: 1.0.42.qualifier
+Bundle-ManifestVersion: 2
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+SWT-WS: cocoa
+SWT-OS: macosx
+Eclipse-PlatformFilter: (& (osgi.ws=cocoa) (osgi.os=macosx) )
+Export-Package: org.eclipse.swt.browser,
+ org.jkiss.sqbase.ui.swt.macos
+Require-Bundle: org.eclipse.swt,
+ org.jkiss.sqbase.model,
+ org.jkiss.sqbase.ui
+Automatic-Module-Name: org.jkiss.sqbase.ui.macos

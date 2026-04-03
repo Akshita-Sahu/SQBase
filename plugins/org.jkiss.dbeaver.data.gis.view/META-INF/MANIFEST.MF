@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase Data GIS UI
+Bundle-SymbolicName: org.jkiss.sqbase.data.gis.view;singleton:=true
+Bundle-Version: 1.0.172.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.jkiss.sqbase.ui.gis.internal.GISViewerActivator
+Require-Bundle: org.jkiss.sqbase.model,
+ org.jkiss.sqbase.data.gis,
+ org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.ui,
+ org.jkiss.sqbase.ui.editors.base,
+ org.jkiss.sqbase.ui.editors.data,
+ org.jkiss.sqbase.ui.editors.entity,
+ org.jkiss.bundle.gis,
+ com.google.gson,
+ com.sun.jna,
+ com.sun.jna.platform
+Export-Package: org.jkiss.sqbase.ui.gis
+Automatic-Module-Name: org.jkiss.sqbase.data.gis.view

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+    <extension point="org.eclipse.ui.views">
+        <view
+            id="org.jkiss.sqbase.tasks"
+            category="org.jkiss.sqbase.core.category"
+            class="org.jkiss.sqbase.tasks.ui.view.DatabaseTasksView"
+            allowMultiple="false"
+            icon="icons/task_list.svg"
+            name="%view.tasks.title">
+            <description>%view.tasks.description</description>
+        </view>
+    </extension>
+
+    <extension point="org.eclipse.core.expressions.propertyTesters">
+        <propertyTester
+            class="org.jkiss.sqbase.tasks.ui.ToolsPropertyTester"
+            id="org.jkiss.sqbase.tasks.ui.ToolsPropertyTester"
+            namespace="org.jkiss.sqbase.core.tools"
+            properties="hasTools"
+            type="org.eclipse.ui.IWorkbenchPart"/>
+        <propertyTester
+            class="org.jkiss.sqbase.tasks.ui.TaskPropertyTester"
+            id="org.jkiss.sqbase.tasks.ui.TaskPropertyTester"
+            namespace="org.jkiss.sqbase.task"
+            properties="scheduled,editable,canOpenSchedulerSettings"
+            type="org.jkiss.sqbase.model.task.DBTTask"/>
+    </extension>
+
+    <extension point="org.eclipse.ui.commands">
+        <command id="org.jkiss.sqbase.task.run" name="%command.org.jkiss.sqbase.task.run.name" description="%command.org.jkiss.sqbase.task.run.description" categoryId="org.jkiss.sqbase.core.navigator">
+            <commandParameter id="task" name="Task" optional="true"/>
+        </command>
+        <command id="org.jkiss.sqbase.task.edit" name="%command.org.jkiss.sqbase.task.edit.name" description="%command.org.jkiss.sqbase.task.edit.description" categoryId="org.jkiss.sqbase.core.navigator"/>
+        <command id="org.jkiss.sqbase.task.create" name="%command.org.jkiss.sqbase.task.create.name" description="%command.org.jkiss.sqbase.task.create.description" categoryId="org.jkiss.sqbase.core.navigator"/>
+        <command id="org.jkiss.sqbase.task.copy" name="%command.org.jkiss.sqbase.task.copy.name" description="%command.org.jkiss.sqbase.task.copy.description" categoryId="org.jkiss.sqbase.core.navigator"/>
+        <command id="org.jkiss.sqbase.folder.task.create" name="%command.org.jkiss.sqbase.task.folder.create.name" description="%command.org.jkiss.sqbase.task.folder.create.description" categoryId="org.jkiss.sqbase.core.navigator"/>
+        <command id="org.jkiss.sqbase.folder.rename" name="%command.org.jkiss.sqbase.folder.rename.name" description="%command.org.jkiss.sqbase.folder.rename.description" categoryId="org.jkiss.sqbase.core.navigator"/>
+        <command id="org.jkiss.sqbase.task.group" name="%command.org.jkiss.sqbase.task.group.name" description="%command.org.jkiss.sqbase.task.group.description" categoryId="org.jkiss.sqbase.core.navigator">
+            <commandParameter id="group" name="Group by" optional="false"/>
+        </command>
+    </extension>
+
+    <extension point="org.eclipse.ui.commandImages">
+        <image commandId="org.jkiss.sqbase.task.run" icon="platform:/plugin/org.jkiss.sqbase.ui/icons/run.svg"/>
+        <image commandId="org.jkiss.sqbase.task.create" icon="icons/task_create.svg"/>
+        <image commandId="org.jkiss.sqbase.task.edit" icon="icons/task_edit.svg"/>
+        <image commandId="org.jkiss.sqbase.folder.task.create" icon="platform:/plugin/org.jkiss.sqbase.ui/icons/file/folder_add.svg"/>
+    </extension>
+
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="org.jkiss.sqbase.tasks.part.active">
+            <with variable="activePartId">
+                <equals value="org.jkiss.sqbase.tasks"/>
+            </with>
+        </definition>
+        <definition id="org.jkiss.sqbase.tasks.editable">
+            <with variable="activePart">
+                <test property="org.jkiss.sqbase.core.global.ui.canCreateConnection"/>
+            </with>
+        </definition>
+    </extension>
+
+    <extension point="org.eclipse.ui.handlers">
+        <!-- Task view handlers -->
+        <handler commandId="org.eclipse.ui.edit.delete" class="org.jkiss.sqbase.tasks.ui.view.TaskHandlerDelete">
+            <activeWhen><reference definitionId="org.jkiss.sqbase.tasks.part.active"/></activeWhen>
+            <enabledWhen>
+                <with variable="selection">
+                    <count value="+"/>
+                    <iterate operator="and">
+                        <or>
+                            <instanceof value="org.jkiss.sqbase.model.task.DBTTask"/>
+                            <instanceof value="org.jkiss.sqbase.model.task.DBTTaskFolder"/>
+                        </or>
+                    </iterate>
+                </with>
+            </enabledWhen>
+        </handler>
+        <handler commandId="org.eclipse.ui.file.properties" class="org.jkiss.sqbase.tasks.ui.view.TaskHandlerEdit">
+            <activeWhen><reference definitionId="org.jkiss.sqbase.tasks.part.active"/></activeWhen>
+            <enabledWhen>
+                <with variable="selection">
+                    <count value="1"/>
+                    <iterate operator="and">
+                        <instanceof value="org.jkiss.sqbase.model.task.DBTTask"/>
+                    </iterate>
+                </with>
+            </enabledWhen>
+        </handler>
+        <handler commandId="org.jkiss.sqbase.task.run" class="org.jkiss.sqbase.tasks.ui.view.TaskHandlerRun">
+            <activeWhen><reference definitionId="org.jkiss.sqbase.tasks.part.active"/></activeWhen>
+            <enabledWhen>
+                <with variable="selection">
+                    <count value="1"/>
+                    <iterate operator="and">
+                        <instanceof value="org.jkiss.sqbase.model.task.DBTTask"/>
+                    </iterate>
+                </with>
+            </enabledWhen>
+        </handler>
+        <handler commandId="org.jkiss.sqbase.task.edit" class="org.jkiss.sqbase.tasks.ui.view.TaskHandlerEdit">
+            <activeWhen><reference definitionId="org.jkiss.sqbase.tasks.part.active"/></activeWhen>
+            <enabledWhen>
+                <with variable="selection">
+                    <count value="1"/>
+                    <iterate operator="and">
+                        <instanceof value="org.jkiss.sqbase.model.task.DBTTask">
+                            <test property="org.jkiss.sqbase.task.editable"/>
+                        </instanceof>
+                    </iterate>
+                </with>
+            </enabledWhen>
+        </handler>
+        <handler commandId="org.jkiss.sqbase.task.create" class="org.jkiss.sqbase.tasks.ui.view.TaskHandlerCreate">
+            <enabledWhen>
+                <reference definitionId="org.jkiss.sqbase.tasks.editable"/>
+            </enabledWhen>
+        </handler>
+        <handler commandId="org.jkiss.sqbase.task.copy" class="org.jkiss.sqbase.tasks.ui.view.TaskHandlerCopy">
+            <activeWhen><reference definitionId="org.jkiss.sqbase.tasks.part.active"/></activeWhen>
+            <enabledWhen>
+                <reference definitionId="org.jkiss.sqbase.tasks.editable"/>
+            </enabledWhen>
+        </handler>
+        <handler commandId="org.eclipse.ui.file.refresh" class="org.jkiss.sqbase.tasks.ui.view.TaskHandlerRefresh">
+            <activeWhen><reference definitionId="org.jkiss.sqbase.tasks.part.active"/></activeWhen>
+        </handler>
+        <handler commandId="org.jkiss.sqbase.folder.task.create" class="org.jkiss.sqbase.tasks.ui.view.TaskHandlerFolderCreate">
+            <enabledWhen>
+                <reference definitionId="org.jkiss.sqbase.tasks.editable"/>
+            </enabledWhen>
+        </handler>
+        <handler commandId="org.jkiss.sqbase.folder.rename" class="org.jkiss.sqbase.tasks.ui.view.TaskFolderRenameHandler">
+            <activeWhen><reference definitionId="org.jkiss.sqbase.tasks.part.active"/></activeWhen>
+            <enabledWhen>
+                <with variable="selection">
+                    <count value="1"/>
+                    <iterate operator="and">
+                        <instanceof value="org.jkiss.sqbase.model.task.DBTTaskFolder"/>
+                    </iterate>
+                </with>
+            </enabledWhen>
+        </handler>
+        <handler commandId="org.jkiss.sqbase.task.group" class="org.jkiss.sqbase.tasks.ui.view.TaskHandlerGroupBy">
+        </handler>
+
+    </extension>
+
+    <extension point="org.eclipse.ui.menus">
+        <!-- Tools context menu -->
+        <menuContribution allPopups="false" locationURI="popup:org.eclipse.ui.popup.any?before=generate">
+            <menu label="%menu.database.tools" icon="platform:/plugin/org.jkiss.sqbase.ui/icons/misc/tools.svg">
+                <visibleWhen>
+                    <with variable="activePart">
+                        <and>
+                            <test property="org.jkiss.sqbase.core.global.ui.hasPermission" value="database-developer"/>
+                            <test property="org.jkiss.sqbase.core.tools.hasTools"/>
+                        </and>
+                    </with>
+                </visibleWhen>
+                <dynamic id="org.jkiss.sqbase.core.menu.tools" class="org.jkiss.sqbase.tasks.ui.DataSourceToolsContributor"/>
+            </menu>
+        </menuContribution>
+
+        <!-- Datasource menu -->
+        <menuContribution allPopups="false" locationURI="menu:dataSourceMenu?after=tools">
+            <menu label="%menu.database.tools" icon="platform:/plugin/org.jkiss.sqbase.ui/icons/misc/tools.svg">
+                <dynamic id="org.jkiss.sqbase.core.menu.tools" class="org.jkiss.sqbase.tasks.ui.DataSourceToolsContributor"/>
+                <visibleWhen>
+                    <test property="org.jkiss.sqbase.core.global.ui.hasPermission" value="database-developer"/>
+                </visibleWhen>
+            </menu>
+            <command commandId="org.jkiss.sqbase.ui.tools.menu">
+                <visibleWhen>
+                    <test property="org.jkiss.sqbase.core.global.ui.hasPermission" value="database-developer"/>
+                </visibleWhen>
+            </command>
+        </menuContribution>
+
+        <menuContribution allPopups="false" locationURI="toolbar:org.jkiss.sqbase.tasks">
+            <command commandId="org.jkiss.sqbase.task.group" style="toggle" label="%command.org.jkiss.sqbase.task.group.category.name"
+                     icon="icons/task_list.svg">
+                <parameter name="group" value="category"/>
+                <visibleWhen checkEnabled="true">
+                    <test property="org.jkiss.sqbase.core.global.ui.hasPermission" value="database-developer"/>
+                </visibleWhen>
+            </command>
+            <command commandId="org.jkiss.sqbase.task.group" style="toggle" label="%command.org.jkiss.sqbase.task.group.type.name"
+                     icon="platform:/plugin/org.jkiss.sqbase.model/icons/tree/task.svg">
+                <parameter name="group" value="type"/>
+                <visibleWhen checkEnabled="true">
+                    <test property="org.jkiss.sqbase.core.global.ui.hasPermission" value="database-developer"/>
+                </visibleWhen>
+            </command>
+            <separator name="additions" visible="true"/>
+            <command commandId="org.jkiss.sqbase.task.run"/>
+            <separator name="additions" visible="true"/>
+        </menuContribution>
+
+        <menuContribution allPopups="false" locationURI="menu:org.jkiss.sqbase.tasks">
+            <command commandId="org.jkiss.sqbase.task.create">
+                <visibleWhen checkEnabled="true">
+                    <test property="org.jkiss.sqbase.core.global.ui.hasPermission" value="database-developer"/>
+                </visibleWhen>
+            </command>
+            <command commandId="org.jkiss.sqbase.folder.task.create">
+                <visibleWhen checkEnabled="true">
+                    <test property="org.jkiss.sqbase.core.global.ui.hasPermission" value="database-developer"/>
+                </visibleWhen>
+            </command>
+            <command commandId="org.eclipse.ui.edit.delete">
+                <visibleWhen checkEnabled="true"/>
+            </command>
+            <separator name="additions" visible="true"/>
+            <menu label="%org.jkiss.sqbase.tasks.menu.project.label">
+                <dynamic id="org.jkiss.sqbase.tasks.menu.project.active" class="org.jkiss.sqbase.ui.navigator.actions.NavigatorActiveProjectContributor"/>
+            </menu>
+        </menuContribution>
+
+        <menuContribution allPopups="false" locationURI="toolbar:sqbase-tools?after=additions">
+            <separator name="tasks" visible="false"/>
+            <command commandId="org.eclipse.ui.views.showView" icon="icons/task_list.svg" label="%view.tasks.title" style="pulldown" id="org.jkiss.sqbase.menu.tasks">
+                <parameter name="org.eclipse.ui.views.showView.viewId" value="org.jkiss.sqbase.tasks"/>
+                <visibleWhen>
+                    <and>
+                        <test property="org.jkiss.sqbase.core.global.ui.hasPermission" value="database-developer"/>
+                        <reference definitionId="SQBasePerspectiveActive"/>
+                    </and>
+                </visibleWhen>
+            </command>
+        </menuContribution>
+
+        <menuContribution allPopups="false" locationURI="menu:dataSourceMenu?after=tools">
+            <menu id="org.jkiss.sqbase.menu.tasks" label="%menu.database.tasks.label"  icon="icons/task_list.svg"/>
+            <visibleWhen>
+                <test property="org.jkiss.sqbase.core.global.ui.hasPermission" value="database-developer"/>
+            </visibleWhen>
+        </menuContribution>
+
+        <menuContribution allPopups="false" locationURI="menu:org.jkiss.sqbase.menu.tasks">
+            <command commandId="org.jkiss.sqbase.task.create">
+                <visibleWhen>
+                    <reference definitionId="org.jkiss.sqbase.tasks.editable"/>
+                </visibleWhen>
+            </command>
+            <command commandId="org.eclipse.ui.views.showView" icon="icons/task_list.svg" label="%view.tasks.title" style="pulldown" id="org.jkiss.sqbase.menu.tasks">
+                <parameter name="org.eclipse.ui.views.showView.viewId" value="org.jkiss.sqbase.tasks"/>
+                <visibleWhen>
+                    <test property="org.jkiss.sqbase.core.global.ui.hasPermission" value="database-developer"/>
+                </visibleWhen>
+            </command>
+            <separator name="tasks" visible="true"/>
+            <dynamic id="org.jkiss.sqbase.menu.tasks.recent" class="org.jkiss.sqbase.tasks.ui.RecentTasksMenuContributor"/>
+        </menuContribution>
+
+        <menuContribution allPopups="false" locationURI="menu:window?before=primary.views">
+            <command commandId="org.jkiss.sqbase.core.view.toggle" style="toggle"><parameter name="viewId" value="org.jkiss.sqbase.tasks"/>
+                <visibleWhen>
+                    <test property="org.jkiss.sqbase.core.global.ui.hasPermission" value="database-developer"/>
+                </visibleWhen>
+            </command>
+        </menuContribution>
+
+    </extension>
+
+    <extension point="org.eclipse.ui.bindings">
+        <key commandId="org.jkiss.sqbase.task.edit" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration" sequence="Enter"/>
+        <key commandId="org.jkiss.sqbase.task.edit" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration" sequence="F4"/>
+    </extension>
+
+    <extension point="org.eclipse.ui.perspectiveExtensions">
+        <perspectiveExtension targetID="org.jkiss.sqbase.core.perspective">
+            <view
+                closeable="true"
+                standalone="false"
+                moveable="true"
+                visible="false"
+                showTitle="true"
+                relationship="stack"
+                relative="org.eclipse.ui.views.TaskList"
+                id="org.jkiss.sqbase.tasks"/>
+            <viewShortcut id="org.jkiss.sqbase.tasks" />
+        </perspectiveExtension>
+    </extension>
+
+</plugin>

@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase UI Editors - Connections
+Bundle-SymbolicName: org.jkiss.sqbase.ui.editors.connection;singleton:=true
+Bundle-Version: 1.0.168.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.ui.workbench.texteditor,
+ org.eclipse.e4.ui.css.swt.theme,
+ org.eclipse.ui.net,
+ org.jkiss.sqbase.registry;visibility:=reexport,
+ org.jkiss.sqbase.ui.editors.base;visibility:=reexport,
+ org.jkiss.sqbase.ui.navigator;visibility:=reexport
+Export-Package: org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.ui,
+ org.jkiss.sqbase.ui.actions,
+ org.jkiss.sqbase.ui.actions.datasource,
+ org.jkiss.sqbase.ui.dialogs,
+ org.jkiss.sqbase.ui.dialogs.net,
+ org.jkiss.sqbase.ui.dialogs.connection,
+ org.jkiss.sqbase.ui.dialogs.driver,
+ org.jkiss.sqbase.ui.internal,
+ org.jkiss.sqbase.ui.preferences
+Automatic-Module-Name: org.jkiss.sqbase.ui.editors.connection

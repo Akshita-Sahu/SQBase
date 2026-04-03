@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase Schema Compare UI (Simple)
+Bundle-SymbolicName: org.jkiss.sqbase.cmp.simple.ui;singleton:=true
+Bundle-Version: 6.0.173.qualifier
+Bundle-Release-Date: 20260420
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package:  org.jkiss.sqbase.tools.compare.simple.ui
+Require-Bundle: org.jkiss.sqbase.model,
+ org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.ui,
+ org.jkiss.sqbase.ui.editors.sql,
+ org.jkiss.sqbase.ui.navigator,
+ org.jkiss.sqbase.cmp.simple,
+ org.jkiss.utils
+Bundle-Localization: OSGI-INF/l10n/bundle
+Automatic-Module-Name: org.jkiss.sqbase.cmp.simple.ui

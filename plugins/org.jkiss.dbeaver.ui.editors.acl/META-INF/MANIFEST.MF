@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase UI Editors - ACL
+Bundle-SymbolicName: org.jkiss.sqbase.ui.editors.acl;singleton:=true
+Bundle-Version: 1.0.173.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.jkiss.sqbase.ui.navigator,
+ org.jkiss.sqbase.ui.editors.base
+Automatic-Module-Name: org.jkiss.sqbase.ui.editors.acl
+

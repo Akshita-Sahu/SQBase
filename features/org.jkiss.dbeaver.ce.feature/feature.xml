@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+        id="org.jkiss.sqbase.ce.feature"
+        label="SQBase Community Edition"
+        version="26.0.3.qualifier"
+        provider-name="SQBase Corp"
+        plugin="org.jkiss.sqbase.ui.app.standalone">
+
+    <description>SQBase - Universal Database Manager</description>
+
+    <copyright>SQBase Corp and others</copyright>
+    <license url="https://sqbase.io/product/sqbase_license.txt"/>
+
+    <includes id="org.jkiss.sqbase.standalone.feature" version="0.0.0"/>
+    <includes id="org.jkiss.sqbase.app.local.feature" version="0.0.0"/>
+    <includes id="org.jkiss.sqbase.ui.extra.feature" version="0.0.0"/>
+
+    <plugin id="org.jkiss.sqbase.ui.app.standalone" version="0.0.0"/>
+
+</feature>

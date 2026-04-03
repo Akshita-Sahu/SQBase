@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase Sample Database
+Bundle-SymbolicName: org.jkiss.sqbase.ui.config.sample;singleton:=true
+Bundle-Version: 1.0.214.qualifier
+Bundle-Release-Date: 20260420
+Require-Bundle: org.eclipse.core.resources,
+ org.jkiss.sqbase.ui,
+ org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.ext.sqlite
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Export-Package: org.jkiss.sqbase.ui.config.sample
+Automatic-Module-Name: org.jkiss.sqbase.ui.config.sample

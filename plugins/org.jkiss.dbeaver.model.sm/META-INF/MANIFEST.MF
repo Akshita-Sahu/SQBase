@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase Security Manager Model
+Bundle-SymbolicName: org.jkiss.sqbase.model.sm;singleton:=true
+Bundle-Version: 1.0.84.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Export-Package: org.jkiss.sqbase.model.security,
+ org.jkiss.sqbase.model.security.user,
+ org.jkiss.sqbase.model.security.exception,
+ org.jkiss.sqbase.model.auth,
+ org.jkiss.sqbase.model.secret
+Require-Bundle: org.jkiss.sqbase.model;visibility:=reexport
+Bundle-Localization: OSGI-INF/l10n/bundle
+Automatic-Module-Name: org.jkiss.sqbase.model.sm

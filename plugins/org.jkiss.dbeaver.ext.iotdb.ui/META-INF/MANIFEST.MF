@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase IoTDB UI Support
+Bundle-SymbolicName: org.jkiss.sqbase.ext.iotdb.ui;singleton:=true
+Bundle-Version: 1.0.15.qualifier
+Bundle-Release-Date: 20260420
+Bundle-Activator: org.jkiss.sqbase.ext.iotdb.ui.IoTDBUiActivator
+Require-Bundle: org.jkiss.sqbase.model.sql,
+ org.jkiss.sqbase.data.gis,
+ org.jkiss.sqbase.ext.generic.ui,
+ org.jkiss.sqbase.ext.iotdb,
+ org.jkiss.sqbase.model,
+ org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.tasks.native.ui,
+ org.jkiss.sqbase.ui,
+ org.jkiss.sqbase.ui.editors.base,
+ org.jkiss.sqbase.ui.editors.connection,
+ org.jkiss.sqbase.ui.editors.data,
+ org.jkiss.sqbase.ui.editors.entity,
+ org.jkiss.sqbase.ui.editors.sql,
+ org.jkiss.sqbase.ui.editors.session,
+ org.jkiss.sqbase.ui.navigator,
+ org.jkiss.sqbase.tasks.native.ui,
+ org.jkiss.sqbase.tasks.ui,
+ com.google.gson
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Automatic-Module-Name: org.jkiss.sqbase.ext.iotdb.ui
+Export-Package: org.jkiss.sqbase.ext.iotdb.ui.editors

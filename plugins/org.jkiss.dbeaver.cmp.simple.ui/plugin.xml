@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+
+    <extension point="org.eclipse.ui.commands">
+        <command id="org.jkiss.sqbase.core.compare.simple" name="%command.org.jkiss.sqbase.core.compare.simple.name" description="%command.org.jkiss.sqbase.core.compare.simple.description" categoryId="org.jkiss.sqbase.core.util"/>
+    </extension>
+
+    <extension point="org.eclipse.ui.commandImages">
+        <image commandId="org.jkiss.sqbase.core.compare.simple" icon="platform:/plugin/org.jkiss.sqbase.model/icons/types/struct.svg"/>
+    </extension>
+
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="org.jkiss.sqbase.cmp.comparable">
+            <with variable="selection">
+                <count value="+"/>
+                <iterate operator="and">
+                    <adapt type="org.jkiss.sqbase.model.navigator.DBNDatabaseNode"/>
+                </iterate>
+            </with>
+        </definition>
+    </extension>
+
+    <extension point="org.eclipse.ui.handlers">
+        <handler commandId="org.jkiss.sqbase.core.compare.simple" class="org.jkiss.sqbase.tools.compare.simple.ui.CompareObjectsHandler">
+            <enabledWhen><reference definitionId="org.jkiss.sqbase.cmp.comparable"/></enabledWhen>
+        </handler>
+    </extension>
+
+    <extension point="org.eclipse.ui.menus">
+
+        <menuContribution allPopups="false" locationURI="popup:org.eclipse.ui.popup.any?after=compare">
+            <menu id="sqbase-compare" label="%menu.compare.label" icon="platform:/plugin/org.jkiss.sqbase.ui/icons/file/compare.svg">
+                <separator name="additions" visible="true"/>
+                <command commandId="org.jkiss.sqbase.core.compare.simple">
+                    <visibleWhen checkEnabled="true"/>
+                </command>
+            </menu>
+        </menuContribution>
+
+        <menuContribution allPopups="false" locationURI="menu:dataSourceMenu?after=tools">
+            <menu id="sqbase-compare-main" label="%menu.compare.label" icon="platform:/plugin/org.jkiss.sqbase.ui/icons/file/compare.svg">
+                <separator name="additions" visible="true"/>
+                <command commandId="org.jkiss.sqbase.core.compare.simple">
+                    <visibleWhen checkEnabled="true"/>
+                </command>
+            </menu>
+        </menuContribution>
+
+    </extension>
+
+
+</plugin>

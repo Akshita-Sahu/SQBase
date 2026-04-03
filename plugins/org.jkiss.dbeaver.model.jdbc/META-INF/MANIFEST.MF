@@ -1,0 +1,21 @@
+fManifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase JDBC Model
+Bundle-SymbolicName: org.jkiss.sqbase.model.jdbc;singleton:=true
+Bundle-Version: 1.0.70.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Export-Package: org.jkiss.sqbase.model.exec.jdbc,
+ org.jkiss.sqbase.model.impl.jdbc,
+ org.jkiss.sqbase.model.impl.jdbc.cache,
+ org.jkiss.sqbase.model.impl.jdbc.data,
+ org.jkiss.sqbase.model.impl.jdbc.data.handlers,
+ org.jkiss.sqbase.model.impl.jdbc.exec,
+ org.jkiss.sqbase.model.impl.jdbc.struct,
+ org.jkiss.sqbase.model.sql.backup
+Require-Bundle: org.jkiss.sqbase.model
+Bundle-Localization: OSGI-INF/l10n/bundle
+Automatic-Module-Name: org.jkiss.sqbase.model.jdbc
+

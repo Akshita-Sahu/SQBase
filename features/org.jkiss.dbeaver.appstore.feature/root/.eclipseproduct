@@ -1,0 +1,6 @@
+name=${sqbase-product}
+id=org.jkiss.sqbase.core.appstore
+version=${sqbase-version}
+snapshot=${sqbase-version}-${build-timestamp}
+branch=${sourceBranch}
+commit=${sourceCommit}

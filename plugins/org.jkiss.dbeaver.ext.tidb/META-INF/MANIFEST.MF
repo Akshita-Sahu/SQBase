@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase TiDB Model
+Bundle-SymbolicName: org.jkiss.sqbase.ext.tidb;singleton:=true
+Bundle-Version: 1.0.57.qualifier
+Bundle-Release-Date: 20260420
+Require-Bundle: org.jkiss.sqbase.model,
+ org.jkiss.sqbase.model.sql,
+ org.jkiss.sqbase.ext.mysql,
+ org.jkiss.sqbase.registry
+Export-Package: org.jkiss.sqbase.ext.tidb,
+ org.jkiss.sqbase.ext.tidb.mysql.model
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Automatic-Module-Name: org.jkiss.sqbase.ext.tidb

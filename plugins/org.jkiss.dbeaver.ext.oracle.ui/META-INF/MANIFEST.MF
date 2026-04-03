@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase Oracle UI
+Bundle-SymbolicName: org.jkiss.sqbase.ext.oracle.ui;singleton:=true
+Bundle-Version: 1.0.164.qualifier
+Bundle-Release-Date: 20260420
+Bundle-Activator: org.jkiss.sqbase.ext.oracle.ui.internal.OracleUIActivator
+Require-Bundle: org.jkiss.sqbase.ui.config.migration,
+ org.jkiss.sqbase.ui.editors.locks,
+ com.github.jsqlparser,
+ com.google.gson,
+ org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.net.ssh,
+ org.jkiss.sqbase.ext.oracle,
+ org.jkiss.sqbase.ui.editors.locks,
+ org.jkiss.sqbase.ui.navigator,
+ org.jkiss.sqbase.ui.editors.base,
+ org.jkiss.sqbase.ui.editors.connection,
+ org.jkiss.sqbase.ui.editors.data,
+ org.jkiss.sqbase.ui.editors.entity,
+ org.jkiss.sqbase.ui.editors.sql,
+ org.jkiss.sqbase.ui.editors.session,
+ org.jkiss.sqbase.tasks.native.ui,
+ org.jkiss.sqbase.tasks.ui
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Import-Package: com.google.gson
+Export-Package: org.jkiss.sqbase.ext.oracle.ui.config,
+ org.jkiss.sqbase.ext.oracle.ui.actions,
+ org.jkiss.sqbase.ext.oracle.ui.editors,
+ org.jkiss.sqbase.ext.oracle.ui.views
+Automatic-Module-Name: org.jkiss.sqbase.ext.oracle.ui

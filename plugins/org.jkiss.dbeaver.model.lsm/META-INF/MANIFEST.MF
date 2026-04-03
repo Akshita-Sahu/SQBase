@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase SQL Language Semantic Model
+Bundle-Vendor: SQBase Corp
+Bundle-Version: 1.0.72.qualifier
+Bundle-Release-Date: 20260420
+Bundle-SymbolicName: org.jkiss.sqbase.model.lsm;singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.antlr.antlr4-runtime;visibility:=reexport,
+ org.jkiss.sqbase.model;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: org.jkiss.sqbase.model.lsm,
+ org.jkiss.sqbase.model.lsm.sql,
+ org.jkiss.sqbase.model.lsm.sql.dialect,
+ org.jkiss.sqbase.model.lsm.sql.impl,
+ org.jkiss.sqbase.model.lsm.sql.impl.syntax,
+ org.jkiss.sqbase.model.stm
+Import-Package: org.jkiss.code
+Automatic-Module-Name: org.jkiss.sqbase.model.lsm

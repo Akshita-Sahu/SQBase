@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: Data Transfer UI
+Bundle-SymbolicName: org.jkiss.sqbase.data.transfer.ui;singleton:=true
+Bundle-Version: 1.0.161.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Activator: org.jkiss.sqbase.tools.transfer.ui.internal.DTUIActivator
+Bundle-ActivationPolicy: lazy
+Export-Package: org.jkiss.sqbase.tools.transfer.ui,
+ org.jkiss.sqbase.tools.transfer.ui.internal,
+ org.jkiss.sqbase.tools.transfer.ui.wizard,
+ org.jkiss.sqbase.tools.transfer.ui.pages.database,
+ org.jkiss.sqbase.ui.controls
+Require-Bundle: org.jkiss.sqbase.model.sql;visibility:=reexport,
+ org.jkiss.sqbase.tasks.ui;visibility:=reexport,
+ org.jkiss.sqbase.data.transfer;visibility:=reexport,
+ org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.ui.forms,
+ org.jkiss.sqbase.ui.navigator,
+ org.jkiss.sqbase.ui.editors.base,
+ org.jkiss.sqbase.ui.editors.connection
+Automatic-Module-Name: org.jkiss.sqbase.data.transfer.ui

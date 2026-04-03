@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+
+    <extension point="org.jkiss.sqbase.ui.propertyConfigurator">
+        <propertyConfigurator class="org.jkiss.sqbase.ui.preferences.PrefPageMiscellaneousAbstract" uiClass="org.jkiss.sqbase.ui.macos.config.PrefPageMouseConfigurator"/>
+    </extension>
+
+    <extension point="org.jkiss.sqbase.pluginService">
+        <service class="org.jkiss.sqbase.ui.macos.CocoaUIService"/>
+    </extension>
+
+</fragment>

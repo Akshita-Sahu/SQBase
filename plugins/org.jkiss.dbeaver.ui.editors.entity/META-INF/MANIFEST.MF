@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase UI Editors - Entity
+Bundle-SymbolicName: org.jkiss.sqbase.ui.editors.entity;singleton:=true
+Bundle-Version: 1.0.177.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.help,
+ org.jkiss.sqbase.ui,
+ org.jkiss.sqbase.ui.navigator
+Export-Package: org.jkiss.sqbase.ui.editors.object.config,
+ org.jkiss.sqbase.ui.editors.object.struct
+Automatic-Module-Name: org.jkiss.sqbase.ui.editors.entity
+

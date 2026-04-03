@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase Exasol Model
+Bundle-SymbolicName: org.jkiss.sqbase.ext.exasol;singleton:=true
+Bundle-Version: 1.0.235.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.jkiss.sqbase.model;visibility:=reexport,
+ org.jkiss.sqbase.model.jdbc;visibility:=reexport,
+ org.jkiss.sqbase.model.sql,
+ org.jkiss.sqbase.data.gis
+Automatic-Module-Name: org.jkiss.sqbase.ext.exasol
+Import-Package: com.google.gson
+Export-Package: org.jkiss.sqbase.ext.exasol,
+ org.jkiss.sqbase.ext.exasol.editors,
+ org.jkiss.sqbase.ext.exasol.model,
+ org.jkiss.sqbase.ext.exasol.model.app,
+ org.jkiss.sqbase.ext.exasol.model.lock,
+ org.jkiss.sqbase.ext.exasol.model.security

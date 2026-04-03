@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+    <extension point="org.eclipse.core.expressions.propertyTesters">
+        <propertyTester
+                class="org.jkiss.sqbase.ui.actions.DataSourcePropertyTester"
+                id="org.jkiss.sqbase.ui.actions.DataSourcePropertyTester"
+                namespace="org.jkiss.sqbase.core.datasource"
+                properties="connected,connecting,transactional,synchronizable,transactionActive,supportsTransactions,editable,projectResourceEditable,projectResourceViewable"
+                type="org.jkiss.sqbase.model.DBPContextProvider"/>
+        <propertyTester
+                class="org.jkiss.sqbase.ui.editors.DatabaseEditorPropertyTester"
+                id="org.jkiss.sqbase.ui.editors.DatabaseEditorPropertyTester"
+                namespace="org.jkiss.sqbase.database.editor"
+                properties="active"
+                type="org.jkiss.sqbase.ui.editors.IDatabaseEditor"/>
+        <propertyTester
+                class="org.jkiss.sqbase.ui.editors.text.TextEditorPropertyTester"
+                id="org.jkiss.sqbase.ui.editors.text.TextEditorPropertyTester"
+                namespace="org.jkiss.sqbase.ui.editors.text"
+                properties="available,canComment,canLoad,canSave"
+                type="org.eclipse.ui.IEditorPart"/>
+    </extension>
+
+    <extension point="org.eclipse.ui.elementFactories">
+        <factory id="org.jkiss.sqbase.ui.editors.DatabaseEditorInputFactory" class="org.jkiss.sqbase.ui.editors.DatabaseEditorInputFactory"/>
+        <factory id="org.jkiss.sqbase.ui.editors.NodeEditorInputFactory" class="org.jkiss.sqbase.ui.editors.NodeEditorInputFactory"/>
+    </extension>
+
+    <extension point="org.eclipse.core.runtime.adapters">
+        <factory adaptableType="org.eclipse.ui.IEditorPart" class="org.jkiss.sqbase.ui.editors.DatabaseEditorAdapterFactory">
+            <adapter type="org.jkiss.sqbase.model.struct.DBSObject"/>
+            <adapter type="org.jkiss.sqbase.model.DBPDataSourceContainer"/>
+            <adapter type="org.jkiss.sqbase.model.struct.DBSObject"/>
+            <adapter type="org.jkiss.sqbase.model.struct.DBSEntity"/>
+            <adapter type="org.jkiss.sqbase.model.struct.DBSDataContainer"/>
+            <adapter type="org.jkiss.sqbase.model.struct.DBSDataManipulator"/>
+        </factory>
+        <factory adaptableType="org.eclipse.ui.IEditorInput" class="org.jkiss.sqbase.ui.editors.DatabaseEditorAdapterFactory">
+            <adapter type="org.jkiss.sqbase.model.struct.DBSObject"/>
+            <adapter type="org.jkiss.sqbase.model.DBPDataSourceContainer"/>
+            <adapter type="org.jkiss.sqbase.model.struct.DBSObject"/>
+            <adapter type="org.jkiss.sqbase.model.struct.DBSEntity"/>
+            <adapter type="org.jkiss.sqbase.model.struct.DBSDataContainer"/>
+            <adapter type="org.jkiss.sqbase.model.struct.DBSDataManipulator"/>
+        </factory>
+    </extension>
+
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="org.jkiss.sqbase.core.transactionActive">
+            <with variable="activeEditor">
+                <adapt type="org.jkiss.sqbase.model.DBPContextProvider">
+                    <test property="org.jkiss.sqbase.core.datasource.transactionActive" value="true"/>
+                </adapt>
+            </with>
+        </definition>
+
+        <definition id="org.jkiss.sqbase.core.datasource.connected">
+            <or>
+                <with variable="selection">
+                    <count value="1"/>
+                    <iterate operator="and">
+                        <adapt type="org.jkiss.sqbase.model.DBPContextProvider">
+                            <test property="org.jkiss.sqbase.core.datasource.connected" value="true"/>
+                        </adapt>
+                    </iterate>
+                </with>
+                <with variable="activePart">
+                    <adapt type="org.jkiss.sqbase.model.DBPContextProvider">
+                        <test property="org.jkiss.sqbase.core.datasource.connected" value="true"/>
+                    </adapt>
+                </with>
+            </or>
+        </definition>
+
+        <definition id="org.jkiss.sqbase.core.datasource.connecting">
+            <or>
+                <with variable="selection">
+                    <count value="1"/>
+                    <iterate operator="and">
+                        <adapt type="org.jkiss.sqbase.model.DBPContextProvider">
+                            <test property="org.jkiss.sqbase.core.datasource.connecting"/>
+                        </adapt>
+                    </iterate>
+                </with>
+                <with variable="activePart">
+                    <adapt type="org.jkiss.sqbase.model.DBPContextProvider">
+                        <test property="org.jkiss.sqbase.core.datasource.connecting"/>
+                    </adapt>
+                </with>
+            </or>
+        </definition>
+
+        <definition id="org.jkiss.sqbase.core.datasource.disconnected">
+            <or>
+                <with variable="selection">
+                    <count value="1"/>
+                    <iterate operator="and">
+                        <adapt type="org.jkiss.sqbase.model.DBPContextProvider">
+                            <test property="org.jkiss.sqbase.core.datasource.connected" value="false"/>
+                        </adapt>
+                    </iterate>
+                </with>
+                <with variable="activePart">
+                    <adapt type="org.jkiss.sqbase.model.DBPContextProvider">
+                        <test property="org.jkiss.sqbase.core.datasource.connected" value="false"/>
+                    </adapt>
+                </with>
+            </or>
+        </definition>
+
+        <definition id="org.jkiss.sqbase.core.datasource.synchronizable">
+            <or>
+                <with variable="selection">
+                    <count value="1"/>
+                    <iterate operator="and">
+                        <adapt type="org.jkiss.sqbase.model.DBPContextProvider">
+                            <test property="org.jkiss.sqbase.core.datasource.synchronizable" value="true"/>
+                        </adapt>
+                    </iterate>
+                </with>
+                <with variable="activePart">
+                    <adapt type="org.jkiss.sqbase.model.DBPContextProvider">
+                        <test property="org.jkiss.sqbase.core.datasource.synchronizable" value="true"/>
+                    </adapt>
+                </with>
+            </or>
+        </definition>
+
+    </extension>
+
+    <!-- File content types.
+      No special handling, just says to open these types in embedded text editor -->
+    <extension point="org.eclipse.core.contenttype.contentTypes">
+        <content-type
+                base-type="org.eclipse.core.runtime.text"
+                file-extensions="csv"
+                id="org.jkiss.sqbase.csv"
+                name="CSV file"
+                priority="normal"/>
+        <content-type
+                base-type="org.eclipse.core.runtime.text"
+                file-extensions="tsv"
+                id="org.jkiss.sqbase.tsv"
+                name="TSV file"
+                priority="normal"/>
+        <content-type
+                base-type="org.eclipse.core.runtime.text"
+                file-extensions="log"
+                id="org.jkiss.sqbase.log"
+                name="Log file"
+                priority="normal"/>
+    </extension>
+
+
+    <extension point="org.jkiss.sqbase.fileTypeHandler">
+        <handler id="file" class="org.jkiss.sqbase.ui.editors.file.AbstractFileHandler" databaseHandler="false" order="10000">
+            <extension id="file" extensions="*" icon="platform:/plugin/org.jkiss.sqbase.ui/icons/misc/file.svg"/>
+        </handler>
+    </extension>
+</plugin>

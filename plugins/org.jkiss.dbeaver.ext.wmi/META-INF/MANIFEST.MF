@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase WMI Model
+Bundle-SymbolicName: org.jkiss.sqbase.ext.wmi;singleton:=true
+Bundle-Version: 2.0.279.qualifier
+Bundle-Release-Date: 20260420
+Bundle-Activator: org.jkiss.sqbase.ext.wmi.Activator
+Require-Bundle: org.jkiss.sqbase.ui,
+ org.jkiss.sqbase.ui.editors.connection,
+ org.eclipse.ui.workbench.texteditor
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Automatic-Module-Name: org.jkiss.sqbase.ext.wmi

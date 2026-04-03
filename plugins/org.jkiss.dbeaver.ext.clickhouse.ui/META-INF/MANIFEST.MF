@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase Clickhouse UI
+Bundle-SymbolicName: org.jkiss.sqbase.ext.clickhouse.ui;singleton:=true
+Bundle-Version: 1.0.181.qualifier
+Bundle-Release-Date: 20260420
+Require-Bundle: org.jkiss.sqbase.ext.clickhouse,
+ org.jkiss.sqbase.ui,
+ org.jkiss.sqbase.ui.editors.connection,
+ org.jkiss.sqbase.ui.editors.data,
+ org.jkiss.sqbase.ext.generic.ui
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Automatic-Module-Name: org.jkiss.sqbase.ext.clickhouse.ui

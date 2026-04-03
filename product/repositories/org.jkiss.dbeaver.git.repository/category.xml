@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+    <description name="SQBase - Git integration" url="https://sqbase.io/update/git/latest">SQBase - Git integration</description>
+
+    <feature id="org.jkiss.sqbase.git.feature">
+        <category name="org.jkiss.sqbase.git.category"/>
+    </feature>
+    <category-def name="org.jkiss.sqbase.git.category" label="SQBase Git Support"/>
+</site>

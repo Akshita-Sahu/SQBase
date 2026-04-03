@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase Altibase Support
+Bundle-SymbolicName: org.jkiss.sqbase.ext.altibase;singleton:=true
+Bundle-Version: 1.0.38.qualifier
+Bundle-Release-Date: 20260420
+Require-Bundle: org.jkiss.sqbase.model,
+ org.jkiss.sqbase.ext.generic,
+ org.jkiss.sqbase.data.gis,
+ org.jkiss.sqbase.model.sql,
+ com.google.gson,
+ org.jkiss.sqbase.tasks.native
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Automatic-Module-Name: org.jkiss.sqbase.ext.altibase
+Export-Package: org.jkiss.sqbase.ext.altibase,
+ org.jkiss.sqbase.ext.altibase.model,
+ org.jkiss.sqbase.ext.altibase.model.lock,
+ org.jkiss.sqbase.ext.altibase.model.session

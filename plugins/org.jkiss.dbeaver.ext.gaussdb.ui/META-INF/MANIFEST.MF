@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase GaussDB UI
+Bundle-SymbolicName: org.jkiss.sqbase.ext.gaussdb.ui;singleton:=true
+Bundle-Version: 1.0.38.qualifier
+Bundle-Release-Date: 20260420
+Require-Bundle: org.jkiss.sqbase.ext.postgresql,
+ org.jkiss.sqbase.ext.postgresql.ui,
+ org.jkiss.sqbase.ext.gaussdb
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Automatic-Module-Name: org.jkiss.sqbase.ext.gaussdb.ui
+Import-Package: org.jkiss.sqbase.ui.editors.object.struct

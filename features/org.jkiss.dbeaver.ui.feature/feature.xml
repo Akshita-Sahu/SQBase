@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.jkiss.sqbase.ui.feature"
+      label="SQBase Desktop UI"
+      version="26.0.3.qualifier"
+      provider-name="SQBase Corp">
+
+   <copyright>SQBase Corp and others</copyright>
+   <license url="https://sqbase.io/product/sqbase_license.txt"/>
+
+   <includes id="org.jkiss.sqbase.runtime.feature" version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.eclipse.gef" version="0.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.draw2d" version="0.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.expressions" version="0.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui" version="0.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench" version="0.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor" version="0.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.swt" version="0.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface" version="0.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.text" version="0.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.views" version="0.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.search" version="0.0.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin id="org.jkiss.sqbase.model.rcp" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.core" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.net.ssh.ui" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.ai" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.editors.acl" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.editors.base" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.editors.connection" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.editors.data" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.editors.entity" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.editors.hex" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.editors.image" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.editors.json" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.editors.sql" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.editors.sql.terminal" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.editors.session" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.editors.xml" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.forms" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.navigator" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.search" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.editors.erd" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.data.transfer.ui" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.data.gis.view" version="0.0.0" />
+   <plugin id="org.jkiss.bundle.jfreechart" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.charts" version="0.0.0" />
+
+</feature>

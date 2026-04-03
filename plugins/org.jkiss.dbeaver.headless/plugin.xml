@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+    <extension point="org.eclipse.core.runtime.applications" id="application" name="Test Application">
+        <application visible="true">
+            <run class="org.jkiss.sqbase.headless.SQBaseHeadlessApplication"/>
+        </application>
+    </extension>
+
+    <extension point="org.eclipse.core.runtime.products" id="product">
+        <product application="org.jkiss.sqbase.headless.application" description="Headless product for unit tests" name="SQBase Test Product">
+        </product>
+    </extension>
+
+    <extension point="org.jkiss.sqbase.application">
+        <application
+            id="headless-test-app"
+            family="DB"
+            name="SQBase Console Test Application"
+            description="SQBase Console Test Application"
+            class="org.jkiss.sqbase.headless.SQBaseHeadlessApplication"/>
+    </extension>
+
+</plugin>

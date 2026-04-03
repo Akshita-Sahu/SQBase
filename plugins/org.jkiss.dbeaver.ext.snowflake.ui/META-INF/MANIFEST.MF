@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase Snowflake UI
+Bundle-SymbolicName: org.jkiss.sqbase.ext.snowflake.ui;singleton:=true
+Bundle-Version: 1.0.197.qualifier
+Bundle-Release-Date: 20260420
+Bundle-Activator: org.jkiss.sqbase.ext.snowflake.ui.internal.SnowflakeUIActivator
+Require-Bundle: org.jkiss.sqbase.ext.generic.ui,
+ org.jkiss.sqbase.ext.snowflake
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Bundle-Localization: OSGI-INF/l10n/bundle
+Export-Package: org.jkiss.sqbase.ext.snowflake.ui,
+ org.jkiss.sqbase.ext.snowflake.ui.config
+Automatic-Module-Name: org.jkiss.sqbase.ext.snowflake.ui

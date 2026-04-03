@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase Desktop Launcher
+Bundle-SymbolicName: org.jkiss.sqbase.launcher;singleton:=true
+Bundle-Vendor: SQBase Corp
+Main-Class: org.jkiss.sqbase.launcher.SQBaseLauncher
+Bundle-Version: 1.0.51.qualifier
+Bundle-Release-Date: 20260420
+Automatic-Module-Name: org.jkiss.sqbase.launcher
+Bundle-RequiredExecutionEnvironment: JavaSE-21

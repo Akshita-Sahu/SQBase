@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+    <extension point="org.jkiss.sqbase.pluginService">
+        <service class="org.jkiss.sqbase.winstore.WinStoreService"/>
+    </extension>
+    
+    <extension point="org.jkiss.sqbase.service">
+        <service class="org.jkiss.sqbase.winstore.WinStoreEnvPathMapper" name="org.jkiss.sqbase.runtime.IEnvironmentPathMapper"/>
+    </extension>
+
+</plugin>

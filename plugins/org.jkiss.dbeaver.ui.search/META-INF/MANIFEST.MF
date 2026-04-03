@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase Search UI
+Bundle-SymbolicName: org.jkiss.sqbase.ui.search;singleton:=true
+Bundle-Version: 1.0.168.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.equinox.preferences,
+ org.eclipse.search,
+ org.jkiss.sqbase.ui.editors.base,
+ org.jkiss.sqbase.ui.editors.data,
+ org.jkiss.sqbase.ui.navigator
+Export-Package: org.jkiss.sqbase.ui.search,
+  org.jkiss.sqbase.ui.search.data,
+  org.jkiss.sqbase.ui.search.metadata
+Automatic-Module-Name: org.jkiss.sqbase.ui.search
+

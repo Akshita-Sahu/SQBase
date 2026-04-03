@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase Dashboards Model
+Bundle-SymbolicName: org.jkiss.sqbase.model.dashboard;singleton:=true
+Bundle-Version: 1.0.50.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Export-Package: org.jkiss.sqbase.model.dashboard,
+ org.jkiss.sqbase.model.dashboard.data,
+ org.jkiss.sqbase.model.dashboard.navigator,
+ org.jkiss.sqbase.model.dashboard.registry
+Require-Bundle: org.eclipse.core.expressions,
+ org.jkiss.sqbase.model;visibility:=reexport,
+ org.jkiss.sqbase.registry;visibility:=reexport,
+ com.google.gson
+Bundle-Localization: OSGI-INF/l10n/bundle
+Automatic-Module-Name: org.jkiss.sqbase.model.dashboard

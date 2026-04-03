@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+
+    <extension point="org.jkiss.sqbase.dataSourceView">
+        <view
+                id="org.jkiss.sqbase.ext.vertica.dataSourceWizardView"
+                dataSource="vertica"
+                targetID="org.jkiss.sqbase.ext.ui.newConnectionWizard"
+                label="%dialog.connection.header"
+                class="org.jkiss.sqbase.ext.vertica.ui.views.VerticaConnectionPage"
+                icon="platform:/plugin/org.jkiss.sqbase.ext.vertica/icons/vertica_icon.png">
+        </view>
+        <view
+                class="org.jkiss.sqbase.ext.vertica.ui.views.VerticaConnectionPage"
+                icon="platform:/plugin/org.jkiss.sqbase.ext.vertica/icons/vertica_icon.png"
+                id="org.jkiss.sqbase.ext.vertica.dataSourceEditorView"
+                dataSource="vertica"
+                label="%dialog.connection.header"
+                targetID="org.jkiss.sqbase.ext.ui.editConnectionDialog">
+        </view>
+    </extension>
+
+    <extension point="org.jkiss.sqbase.databaseEditor">
+        <configurator class="org.jkiss.sqbase.ext.vertica.ui.config.VerticaSequenceConfigurator">
+            <objectType name="org.jkiss.sqbase.ext.vertica.model.VerticaSequence"/>
+        </configurator>
+    </extension>
+
+</plugin>

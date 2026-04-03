@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+    <extension point="org.jkiss.sqbase.application">
+        <application id="sqbase-ce-eclipse"
+            family="DB"
+            name="%productName"
+            description="%productSubTitle"
+            class="org.jkiss.sqbase.ui.app.SQBasePluginApplication"/>
+    </extension>
+
+    <extension point="org.eclipse.ui.menus">
+        <!-- Edit menu -->
+        <menuContribution allPopups="false" locationURI="menu:edit">
+            <separator name="additions" visible="true"/>
+            <command commandId="org.jkiss.sqbase.core.navigator.bookmark.add">
+                <visibleWhen checkEnabled="true"/>
+            </command>
+        </menuContribution>
+
+        <!-- Edit menu -->
+        <menuContribution allPopups="false" locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+            <menu id="edit" label="%menu.edit">
+                <command commandId="org.jkiss.sqbase.ui.editors.sql.comment.single"><visibleWhen checkEnabled="true"/></command>
+                <command commandId="org.jkiss.sqbase.ui.editors.sql.comment.multi"><visibleWhen checkEnabled="true"/></command>
+            </menu>
+        </menuContribution>
+
+    </extension>
+
+    <extension point="org.eclipse.ui.preferencePages">
+        <page id="org.jkiss.sqbase.preferences.eclipse.main" class="org.jkiss.sqbase.ui.preferences.PrefPageEclipseGeneral" name="%pref.page.name.db.configuration">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.pref.db.general"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.user.interface"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.main.connections" id="org.jkiss.sqbase.preferences.main.errorHandle" class="org.jkiss.sqbase.ui.preferences.PrefPageErrorHandle" name="%pref.page.name.errorHandle">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.main.common" id="org.jkiss.sqbase.preferences.main.errorLogs" class="org.jkiss.sqbase.ui.preferences.PrefPageErrorLogs" name="%pref.page.name.errorLogs">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.eclipse.main" id="org.jkiss.sqbase.preferences.main.connections" class="org.jkiss.sqbase.ui.preferences.PrefPageConnectionsGeneral" name="%pref.page.name.connections">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.connection"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.database.connection"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.main.connections" id="org.jkiss.sqbase.preferences.client.connections" class="org.jkiss.sqbase.ui.preferences.PrefPageConnectionClient" name="%pref.page.name.client.connections">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.connection"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.main.connections" id="org.jkiss.sqbase.preferences.main.transactions" class="org.jkiss.sqbase.ui.preferences.PrefPageTransactions" name="%pref.page.name.transactions">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.connection"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.main.connections" id="org.jkiss.sqbase.preferences.main.meta" class="org.jkiss.sqbase.ui.preferences.PrefPageMetaData" name="%pref.page.name.meta">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.pref.main.meta"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.main.common" id="org.jkiss.sqbase.preferences.misc.qm" class="org.jkiss.sqbase.ui.preferences.PrefPageQueryManager" name="%pref.page.name.query.manager">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.pref.db.qm"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.main.connections" id="org.jkiss.sqbase.preferences.drivers" class="org.jkiss.sqbase.ui.preferences.PrefPageDrivers" name="%pref.page.name.drivers">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.pref.ui.general"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.connection"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.main.connections" id="org.jkiss.sqbase.preferences.globalNetworkProfiles" class="org.jkiss.sqbase.ui.preferences.PrefPageGlobalProjectNetworkProfiles" name="%pref.page.name.network.profiles">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.connection"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.network.profiles"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.drivers" id="org.jkiss.sqbase.preferences.drivers.maven" class="org.jkiss.sqbase.ui.preferences.PrefPageDriversMaven" name="%pref.page.name.drivers.maven">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.connection"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.drivers" id="org.jkiss.sqbase.preferences.drivers.classpath" class="org.jkiss.sqbase.ui.preferences.PrefPageDriversClasspath" name="%pref.page.name.drivers.classpath">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.connection"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.main.connections" id="org.jkiss.sqbase.preferences.connectionTypes" class="org.jkiss.sqbase.ui.preferences.PrefPageConnectionTypes" name="%pref.page.name.connectionTypes">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.connection"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.main.common" id="org.jkiss.sqbase.preferences.navigator" class="org.jkiss.sqbase.ui.preferences.PrefPageDatabaseNavigator" name="%pref.page.name.navigator">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.eclipse.main" id="org.jkiss.sqbase.preferences.editors" class="org.jkiss.sqbase.ui.preferences.PrefPageDatabaseEditors" name="%pref.page.name.editors">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.pref.editor.entity"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.main.common" id="org.jkiss.sqbase.preferences.main.confirmations" class="org.jkiss.sqbase.ui.preferences.PrefPageConfirmations" name="%pref.page.name.confirmations">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.main" id="org.jkiss.sqbase.preferences.main.notifications" class="org.jkiss.sqbase.ui.preferences.PrefPageNotifications" name="%pref.page.name.notifications">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.pref.ui.notifications.label"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.main" id="org.jkiss.sqbase.preferences.main.misc" class="org.jkiss.sqbase.ui.preferences.PrefPageMiscellaneous" name="%pref.page.name.miscellaneous">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+            <keywordReference id="org.jkiss.sqbase.keyword.pref.ui.misc"/>
+        </page>
+        <page category="org.jkiss.sqbase.preferences.eclipse.main" id="org.jkiss.sqbase.preferences.main.common" class="org.jkiss.sqbase.ui.preferences.PrefPageDatabaseUserInterface" name="%pref.page.name.user.interface">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.sqbase"/>
+            <keywordReference id="org.jkiss.sqbase.core.keyword.user.interface"/>
+        </page>
+        <page category="org.eclipse.ui.net.NetPreferences" id="org.jkiss.sqbase.preferences.network.expert" class="org.jkiss.sqbase.ui.preferences.PrefPageNetworkExpert" name="%pref.page.name.network.expert">
+            <keywordReference id="org.jkiss.sqbase.core.keyword.network.expert"/>
+        </page>
+    </extension>
+
+    <extension point="org.eclipse.ui.keywords">
+        <keyword id="org.jkiss.sqbase.keyword.pref.ui.misc" label="checkbox bool boolean holiday decoration christmas snow"/>
+        <keyword id="org.jkiss.sqbase.core.keyword.network.expert" label="ip ipv4 ipv6 protocol ssl tls net debug"/>
+    </extension>
+
+    <extension point="org.eclipse.ui.perspectiveExtensions">
+       <perspectiveExtension targetID="org.jkiss.sqbase.core.perspective">
+          <newWizardShortcut id="org.jkiss.sqbase.core.wizard.new.connection"/>
+          <newWizardShortcut id="org.jkiss.sqbase.core.wizard.new.project"/>
+       </perspectiveExtension>
+    </extension>
+
+</plugin>

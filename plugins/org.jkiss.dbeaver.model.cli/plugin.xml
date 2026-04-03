@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+    <extension-point id="org.jkiss.sqbase.commandLine" name="Command line extension" schema="schema/org.jkiss.sqbase.commandLine.exsd"/>
+
+    <extension point="org.jkiss.sqbase.commandLine">
+        <parameter
+            exitAfterExecute="true"
+            handler="org.jkiss.sqbase.model.cli.command.ListAuthenticationModelParameterHandler"/>
+        <parameter
+            exitAfterExecute="true"
+            handler="org.jkiss.sqbase.model.cli.command.ListNetworkHandlersParameterHandler"/>
+    </extension>
+</plugin>

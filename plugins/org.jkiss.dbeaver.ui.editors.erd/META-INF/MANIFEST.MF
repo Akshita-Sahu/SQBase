@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase ERD UI
+Bundle-SymbolicName: org.jkiss.sqbase.ui.editors.erd;singleton:=true
+Bundle-Version: 3.1.18.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Activator: org.jkiss.sqbase.ui.editors.erd.internal.ERDUIActivator
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.core.filesystem,
+ org.eclipse.core.resources,
+ org.eclipse.core.expressions,
+ org.eclipse.ui.views,
+ org.eclipse.gef;visibility:=reexport,
+ org.jkiss.sqbase.model;visibility:=reexport,
+ org.jkiss.sqbase.model.rcp,
+ org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.model.erd;visibility:=reexport,
+ org.jkiss.sqbase.ui,
+ org.jkiss.sqbase.ui.editors.base,
+ org.jkiss.sqbase.ui.editors.entity,
+ org.jkiss.sqbase.ui.navigator
+Export-Package: org.jkiss.sqbase.ui.editors.erd,
+ org.jkiss.sqbase.ui.editors.erd.command,
+ org.jkiss.sqbase.ui.editors.erd.connector,
+ org.jkiss.sqbase.ui.editors.erd.directedit,
+ org.jkiss.sqbase.ui.editors.erd.editor,
+ org.jkiss.sqbase.ui.editors.erd.export,
+ org.jkiss.sqbase.ui.editors.erd.figures,
+ org.jkiss.sqbase.ui.editors.erd.model,
+ org.jkiss.sqbase.ui.editors.erd.notations,
+ org.jkiss.sqbase.ui.editors.erd.part,
+ org.jkiss.sqbase.ui.editors.erd.policy,
+ org.jkiss.sqbase.ui.editors.erd.router
+Automatic-Module-Name: org.jkiss.sqbase.ui.editors.erd

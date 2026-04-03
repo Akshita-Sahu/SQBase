@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+    <description name="SQBase - office integration" url="https://sqbase.io/update/office/latest">SQBase - office integration</description>
+
+    <feature id="org.jkiss.sqbase.ext.office.feature">
+        <category name="org.jkiss.sqbase.office.category"/>
+    </feature>
+    <category-def name="org.jkiss.sqbase.office.category" label="SQBase Office Support"/>
+</site>

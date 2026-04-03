@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+    <description name="SQBase Update Site" url="https://sqbase.io/update/latest">SQBase CE Update Site</description>
+
+    <category-def name="org.jkiss.sqbase" label="SQBase CE">
+        <description>Universal Database Manager</description>
+    </category-def>
+
+    <feature id="org.jkiss.sqbase.ui.feature">
+        <category name="org.jkiss.sqbase"/>
+    </feature>
+    <feature id="org.jkiss.sqbase.runtime.feature">
+        <category name="org.jkiss.sqbase"/>
+    </feature>
+    <feature id="org.jkiss.sqbase.db.feature">
+        <category name="org.jkiss.sqbase"/>
+    </feature>
+    <feature id="org.jkiss.sqbase.db.ui.feature">
+        <category name="org.jkiss.sqbase"/>
+    </feature>
+
+</site>

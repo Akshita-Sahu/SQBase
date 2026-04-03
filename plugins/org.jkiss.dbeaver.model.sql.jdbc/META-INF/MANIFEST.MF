@@ -1,0 +1,16 @@
+fManifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase SQL JDBC Tools
+Bundle-SymbolicName: org.jkiss.sqbase.model.sql.jdbc;singleton:=true
+Bundle-Version: 1.0.41.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Export-Package: org.jkiss.sqbase.model.sql.schema,
+ org.jkiss.sqbase.model.sql.task,
+ org.jkiss.sqbase.model.sql.db
+Require-Bundle: org.jkiss.sqbase.model.jdbc,
+ org.jkiss.sqbase.model.sql
+Automatic-Module-Name: org.jkiss.sqbase.model.sql.jdbc
+

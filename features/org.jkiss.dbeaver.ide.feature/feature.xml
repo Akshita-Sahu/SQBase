@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+        id="org.jkiss.sqbase.ide.feature"
+        label="SQBase Eclipse Plugin"
+        version="26.0.3.qualifier"
+        provider-name="SQBase Corp"
+        plugin="org.jkiss.sqbase.ui.app.eclipse">
+
+    <description>
+        %description
+    </description>
+
+    <copyright>SQBase Corp and others</copyright>
+    <license url="https://sqbase.io/product/sqbase_license.txt"/>
+
+    <includes id="org.jkiss.sqbase.runtime.feature" version="0.0.0"/>
+    <includes id="org.jkiss.sqbase.ui.feature" version="0.0.0"/>
+    <includes id="org.jkiss.sqbase.ui.extra.feature" version="0.0.0"/>
+    <includes id="org.jkiss.sqbase.db.feature" version="0.0.0"/>
+    <includes id="org.jkiss.sqbase.db.ui.feature" version="0.0.0"/>
+
+    <plugin id="org.jkiss.sqbase.ui.app.eclipse" version="0.0.0" />
+
+</feature>

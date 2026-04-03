@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+    <description name="SQBase Update Site" url="https://sqbase.io/update/latest">SQBase Update Site</description>
+
+    <category-def name="org.jkiss.sqbase" label="SQBase">
+        <description>Universal Database Manager</description>
+    </category-def>
+    <category-def name="org.jkiss.sqbase.drivers" label="External database drivers">
+        <description>3rd party JDBC drivers for SQBase</description>
+    </category-def>
+    <category-def name="org.jkiss.sqbase.additions" label="SQBase Extensions">
+        <description>SQBase advanced extensions</description>
+    </category-def>
+
+    <feature id="org.jkiss.sqbase.ide.feature">
+        <category name="org.jkiss.sqbase"/>
+    </feature>
+    <feature id="org.jkiss.sqbase.ext.office.feature">
+        <category name="org.jkiss.sqbase.additions"/>
+    </feature>
+    <feature id="org.jkiss.sqbase.git.feature">
+        <category name="org.jkiss.sqbase.additions"/>
+    </feature>
+    <feature id="org.jkiss.sqbase.debug.feature">
+        <category name="org.jkiss.sqbase.additions"/>
+    </feature>
+
+</site>

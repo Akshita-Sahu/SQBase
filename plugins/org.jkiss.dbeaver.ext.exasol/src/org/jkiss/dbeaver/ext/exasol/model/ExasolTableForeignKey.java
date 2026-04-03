@@ -1,0 +1,184 @@
+/*
+ * SQBase - Universal Database Manager
+ * Copyright (C) 2010-2025 SQBase Corp and others
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.jkiss.sqbase.ext.exasol.model;
+
+import org.jkiss.code.NotNull;
+import org.jkiss.code.Nullable;
+import org.jkiss.sqbase.DBException;
+import org.jkiss.sqbase.Log;
+import org.jkiss.sqbase.ext.exasol.tools.ExasolUtils;
+import org.jkiss.sqbase.model.DBPDataSource;
+import org.jkiss.sqbase.model.DBPEvaluationContext;
+import org.jkiss.sqbase.model.DBPScriptObject;
+import org.jkiss.sqbase.model.DBUtils;
+import org.jkiss.sqbase.model.impl.jdbc.JDBCUtils;
+import org.jkiss.sqbase.model.impl.jdbc.struct.JDBCTableConstraint;
+import org.jkiss.sqbase.model.meta.Property;
+import org.jkiss.sqbase.model.runtime.DBRProgressMonitor;
+import org.jkiss.sqbase.model.runtime.VoidProgressMonitor;
+import org.jkiss.sqbase.model.struct.DBSEntityConstraintType;
+import org.jkiss.sqbase.model.struct.rdb.DBSForeignKeyModifyRule;
+import org.jkiss.sqbase.model.struct.rdb.DBSTableForeignKey;
+
+import java.sql.ResultSet;
+import java.util.List;
+import java.util.Map;
+
+
+/**
+ * @author Karl
+ */
+public class ExasolTableForeignKey extends JDBCTableConstraint<ExasolTable, ExasolTableForeignKeyColumn>
+    implements DBSTableForeignKey,DBPScriptObject
+{
+
+    private static final Log LOG = Log.getLog(ExasolTableForeignKey.class);
+    private ExasolTable refTable;
+    private Boolean enabled;
+    private List<ExasolTableForeignKeyColumn> columns;
+    
+    
+    private ExasolTableUniqueKey referencedKey;
+
+
+    // -----------------
+    // Constructor
+    // -----------------
+
+    public ExasolTableForeignKey(DBRProgressMonitor monitor, ExasolTable exasolTable, ResultSet dbResult) throws DBException {
+        super(exasolTable, JDBCUtils.safeGetString(dbResult, "CONSTRAINT_NAME"), null, DBSEntityConstraintType.FOREIGN_KEY, true);
+
+        String refSchemaName = JDBCUtils.safeGetString(dbResult, "REFERENCED_SCHEMA");
+        String refTableName = JDBCUtils.safeGetString(dbResult, "REFERENCED_TABLE");
+
+        refTable = ExasolUtils.findTableBySchemaNameAndName(monitor, exasolTable.getDataSource(), refSchemaName, refTableName);
+
+        enabled = JDBCUtils.safeGetBoolean(dbResult, "CONSTRAINT_ENABLED");
+        referencedKey = null;
+    }
+
+    public ExasolTableForeignKey(ExasolTable exasolTable, ExasolTableUniqueKey referencedKey, Boolean enabled, String name) {
+        super(exasolTable, name, "", DBSEntityConstraintType.FOREIGN_KEY, true);
+        this.referencedKey = referencedKey;
+        this.enabled = enabled;
+        setReferencedConstraint(referencedKey);
+
+    }
+
+    // -----------------
+    // Business Contract
+    // -----------------
+
+    @NotNull
+    @Override
+    public DBPDataSource getDataSource() {
+        return getTable().getDataSource();
+    }
+
+    @Nullable
+    @Override
+    public ExasolTable getAssociatedEntity() {
+        return refTable;
+    }
+
+    @NotNull
+    @Override
+    public String getFullyQualifiedName(@NotNull DBPEvaluationContext context) {
+        return DBUtils.getFullQualifiedName(getDataSource(), getTable().getContainer(), getTable(), this);
+    }
+
+    @NotNull
+    @Override
+    public DBSForeignKeyModifyRule getUpdateRule() {
+        if (this.enabled) {
+            return DBSForeignKeyModifyRule.RESTRICT;
+        } else {
+            return DBSForeignKeyModifyRule.NO_ACTION;
+        }
+    }
+
+    @NotNull
+    @Override
+    public DBSForeignKeyModifyRule getDeleteRule() {
+        if (this.enabled) {
+            return DBSForeignKeyModifyRule.RESTRICT;
+        } else {
+            return DBSForeignKeyModifyRule.NO_ACTION;
+        }
+    }
+
+    // -----------------
+    // Columns
+    // -----------------
+    @Override
+    public List<ExasolTableForeignKeyColumn> getAttributeReferences(@Nullable DBRProgressMonitor monitor) throws DBException {
+        return columns;
+    }
+
+    public void setAttributeReferences(List<ExasolTableForeignKeyColumn> columns) {
+        this.columns = columns;
+    }
+
+    // -----------------
+    // Properties
+    // -----------------
+
+    @Property(viewable = true, order = 3)
+    public ExasolTable getReferencedTable() {
+        return refTable;
+    }
+
+    @Nullable
+    @NotNull
+    @Override
+    @Property(id = "reference", viewable = true)
+    public ExasolTableUniqueKey getReferencedConstraint() {
+    	if (referencedKey == null) {
+    	    if (refTable != null) {
+                try {
+                    referencedKey = refTable.getPrimaryKey(new VoidProgressMonitor());
+                } catch (DBException e) {
+                    LOG.error("Error reading pk", e);
+                }
+            }
+    	}
+        return referencedKey;
+    }
+
+    public void setReferencedConstraint(ExasolTableUniqueKey referencedKey) {
+        this.referencedKey = referencedKey;
+        this.refTable = referencedKey == null ? null : referencedKey.getTable();
+    }
+
+    @Property(viewable = true, editable = true, updatable = true)
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+	@NotNull
+    @Override
+	public String getObjectDefinitionText(@NotNull DBRProgressMonitor monitor, @NotNull Map<String, Object> options)
+			throws DBException
+	{
+		return ExasolUtils.getFKDdl(this, monitor);
+	}
+
+}

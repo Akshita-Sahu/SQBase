@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase Charts UI
+Bundle-SymbolicName: org.jkiss.sqbase.ui.charts;singleton:=true
+Bundle-Version: 1.0.174.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.jkiss.sqbase.ui.charts.internal.UIChartsActivator
+Require-Bundle: org.jkiss.sqbase.ui,
+ org.jkiss.bundle.jfreechart;visibility:=reexport
+Export-Package: org.jkiss.sqbase.ui.charts,
+ org.jkiss.sqbase.ui.charts.internal,
+ org.jfree.swt,
+ org.jfree.chart.swt,
+ org.jfree.chart.swt.editor
+Automatic-Module-Name: org.jkiss.sqbase.ui.charts

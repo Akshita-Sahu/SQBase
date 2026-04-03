@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase DB2 for z/OS Support
+Bundle-SymbolicName: org.jkiss.sqbase.ext.db2.zos;singleton:=true
+Bundle-Version: 1.0.180.qualifier
+Bundle-Release-Date: 20260420
+Require-Bundle: org.jkiss.sqbase.model,
+ org.jkiss.sqbase.ext.generic
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Bundle-Localization: OSGI-INF/l10n/bundle
+Automatic-Module-Name: org.jkiss.sqbase.ext.db2.zos
+Export-Package: org.jkiss.sqbase.ext.db2.zos,
+ org.jkiss.sqbase.ext.db2.zos.model

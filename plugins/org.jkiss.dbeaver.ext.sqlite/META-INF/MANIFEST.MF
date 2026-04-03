@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase SQLite Model
+Bundle-SymbolicName: org.jkiss.sqbase.ext.sqlite;singleton:=true
+Bundle-Version: 1.0.226.qualifier
+Bundle-Release-Date: 20260420
+Require-Bundle: org.jkiss.sqbase.model,
+ org.jkiss.sqbase.ext.generic,
+ org.jkiss.sqbase.data.gis,
+ org.jkiss.bundle.gis,
+ org.jkiss.sqbase.model.lsm,
+ org.antlr.antlr4-runtime,
+ com.sqbase.jdbc.driver.libsql;visibility:=reexport
+Export-Package: org.jkiss.sqbase.ext.sqlite,
+ org.jkiss.sqbase.ext.sqlite.model,
+ org.jkiss.sqbase.ext.sqlite.model.data
+Import-Package: org.jkiss.code
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Automatic-Module-Name: org.jkiss.sqbase.ext.sqlite

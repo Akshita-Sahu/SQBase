@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase Tasks View
+Bundle-SymbolicName: org.jkiss.sqbase.tasks.ui.view;singleton:=true
+Bundle-Version: 1.0.126.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.ui.workbench.texteditor,
+ org.jkiss.sqbase.model;visibility:=reexport,
+ org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.tasks.ui,
+ org.jkiss.sqbase.ui,
+ org.jkiss.sqbase.ui.navigator,
+ org.jkiss.sqbase.ui.editors.base
+Export-Package: org.jkiss.sqbase.tasks.ui.view
+Automatic-Module-Name: org.jkiss.sqbase.tasks.ui.view

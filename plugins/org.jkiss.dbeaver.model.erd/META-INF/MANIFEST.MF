@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase ERD Model
+Bundle-SymbolicName: org.jkiss.sqbase.model.erd;singleton:=true
+Bundle-Version: 1.1.18.qualifier
+Bundle-Release-Date: 20260420
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.jkiss.sqbase.model,
+ org.jkiss.sqbase.model.sql
+Export-Package: org.jkiss.sqbase.model.erd
+Automatic-Module-Name: org.jkiss.sqbase.model.erd

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase Cubrid Support
+Bundle-SymbolicName: org.jkiss.sqbase.ext.cubrid;singleton:=true
+Bundle-Version: 1.0.53.qualifier
+Bundle-Release-Date: 20260420
+Bundle-Activator: org.jkiss.sqbase.ext.cubrid.internal.CubridActivator
+Export-Package: org.jkiss.sqbase.ext.cubrid,
+ org.jkiss.sqbase.ext.cubrid.model,
+ org.jkiss.sqbase.ext.cubrid.model.plan
+Require-Bundle: org.jkiss.sqbase.model.sql,
+ org.jkiss.sqbase.model;visibility:=reexport,
+ org.jkiss.sqbase.ext.generic
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: SQBase Corp
+Automatic-Module-Name: org.jkiss.sqbase.ext.cubrid

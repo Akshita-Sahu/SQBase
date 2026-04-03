@@ -1,0 +1,5 @@
+set "scriptDir=%~dp0"
+set "workspaceDir=%scriptDir%..\.."
+IF NOT EXIST "%workspaceDir%\sqbase-common" git clone https://github.com/sqbase/sqbase-common.git "%workspaceDir%\sqbase-common"
+IF NOT EXIST "%workspaceDir%\sqbase-jdbc-libsql" git clone https://github.com/sqbase/sqbase-jdbc-libsql.git "%workspaceDir%\sqbase-jdbc-libsql"
+call "%workspaceDir%\sqbase-common\mvnw.cmd" clean package -Pproduct-sqbase-ce,product-sqbase-eclipse-ce,appstore -T 1C -f "%workspaceDir%\sqbase\product\aggregate"

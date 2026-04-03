@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.jkiss.sqbase.ui.extra.feature"
+      label="SQBase Desktop UI Extras"
+      version="26.0.3.qualifier"
+      provider-name="SQBase Corp">
+
+   <copyright>SQBase Corp and others</copyright>
+   <license url="https://sqbase.io/product/sqbase_license.txt"/>
+
+   <plugin id="org.jkiss.sqbase.tasks.ui" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.tasks.ui.view" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.tasks.native.ui" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.tasks.sql.ui" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.config.migration" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.cmp.simple.ui" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.dashboard" version="0.0.0" />
+   <plugin id="org.jkiss.sqbase.ui.editors.locks" version="0.0.0" />
+
+</feature>

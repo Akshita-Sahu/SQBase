@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQBase Test Suite
+Bundle-SymbolicName: org.jkiss.sqbase.test.platform
+Bundle-Version: 1.0.134.qualifier
+Bundle-Release-Date: 20260420
+Bundle-Vendor: SQBase Corp
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Export-Package: org.jkiss.junit
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.junit,
+ org.mockito.mockito-core,
+ org.apache.felix.scr,
+ org.jkiss.sqbase.headless,
+ org.jkiss.sqbase.model,
+ org.jkiss.sqbase.model.sql,
+ org.jkiss.sqbase.data.transfer,
+ org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.ext.generic,
+ org.jkiss.sqbase.ext.postgresql,
+ org.jkiss.sqbase.osgi.test.runner;visibility:=reexport,
+ org.jkiss.sqbase.ext.oracle,
+ org.jkiss.sqbase.ext.snowflake,
+ org.jkiss.sqbase.ext.hana,
+ org.jkiss.sqbase.ext.mssql

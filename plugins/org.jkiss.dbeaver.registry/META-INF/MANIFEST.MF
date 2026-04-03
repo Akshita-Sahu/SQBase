@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: SQBase Corp
+Bundle-Name: SQBase Model Registry
+Bundle-SymbolicName: org.jkiss.sqbase.registry;singleton:=true
+Bundle-Version: 1.0.171.qualifier
+Bundle-Release-Date: 20260420
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.jkiss.sqbase.registry.internal.RegistryActivator
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: org.jkiss.sqbase.registry,
+ org.jkiss.sqbase.registry.datatype,
+ org.jkiss.sqbase.registry.driver,
+ org.jkiss.sqbase.registry.internal,
+ org.jkiss.sqbase.registry.language,
+ org.jkiss.sqbase.registry.maven,
+ org.jkiss.sqbase.registry.network,
+ org.jkiss.sqbase.registry.rm,
+ org.jkiss.sqbase.registry.project,
+ org.jkiss.sqbase.registry.settings,
+ org.jkiss.sqbase.registry.storage,
+ org.jkiss.sqbase.registry.task,
+ org.jkiss.sqbase.registry.updater
+Require-Bundle: org.eclipse.core.expressions,
+ org.objectweb.asm,
+ com.google.gson,
+ org.jkiss.sqbase.model;visibility:=reexport,
+ com.sun.jna.platform
+Bundle-Localization: OSGI-INF/l10n/bundle
+Automatic-Module-Name: org.jkiss.sqbase.registry
